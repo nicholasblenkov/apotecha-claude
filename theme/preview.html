@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Apotecha — Preview</title>
+  <link rel="stylesheet" href="assets/theme.css">
+  <style>
+    :root {
+      --color-primary: #445c1f;
+      --color-background: #e9ede6;
+      --color-cta-dark: #000000;
+      --color-cta-text: #e9ede6;
+      --color-green-light: #587c25;
+      --color-green-dark: #2a3e0d;
+      --color-green-muted: rgba(65, 93, 25, 0.21);
+      --color-sage: #c6cfbb;
+      --color-mint: #75a68a;
+      --color-watermark: #969b6d;
+      --header-height: 76px;
+    }
+  </style>
+</head>
+<body style="--header-height: 76px;">
+
+  <!-- Header -->
+  <header class="header" role="banner" data-header>
+    <div class="header__inner">
+      <button class="header__menu-toggle" aria-label="Menu" aria-expanded="false" data-menu-toggle>
+        <svg class="header__icon header__icon--menu" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <line x1="3" y1="7" x2="21" y2="7"/>
+          <line x1="3" y1="17" x2="21" y2="17"/>
+        </svg>
+        <svg class="header__icon header__icon--close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <line x1="5" y1="5" x2="19" y2="19"/>
+          <line x1="19" y1="5" x2="5" y2="19"/>
+        </svg>
+      </button>
+
+      <a href="/" class="header__logo" aria-label="Apotecha">
+        <img src="assets/logo.png" alt="Apotecha" class="header__logo-img" width="200" height="56" loading="eager">
+      </a>
+
+      <a href="/cart" class="header__cart" aria-label="Cart">
+        <svg class="header__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 01-8 0"/>
+        </svg>
+      </a>
+    </div>
+
+    <nav class="header__nav" aria-label="Main navigation" data-nav>
+      <ul class="header__nav-list">
+        <li class="header__nav-item"><a href="#" class="header__nav-link">Shop</a></li>
+        <li class="header__nav-item"><a href="#" class="header__nav-link">About</a></li>
+        <li class="header__nav-item"><a href="#" class="header__nav-link">Ingredients</a></li>
+        <li class="header__nav-item"><a href="#" class="header__nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Demo content to test scroll -->
+  <main id="MainContent" role="main">
+    <section style="padding: 80px 40px; text-align: center;">
+      <h1 class="text-headline" style="margin-bottom: 20px;">Shampoo Bar</h1>
+      <p class="text-body" style="max-width: 500px; margin: 0 auto;">Rice protein & green tea. Scroll down to see the sticky header in action.</p>
+    </section>
+
+    <section style="height: 600px; background: linear-gradient(180deg, var(--color-green-light) 0%, var(--color-green-dark) 100%);"></section>
+
+    <section style="padding: 100px 40px; text-align: center;">
+      <h2 class="text-headline">Clean hair. Fewer ingredients.</h2>
+    </section>
+
+    <section style="height: 600px; background: var(--color-green-muted);"></section>
+
+    <section style="padding: 100px 40px; text-align: center;">
+      <h2 class="text-headline">Keep scrolling</h2>
+      <p class="text-body" style="margin-top: 16px;">Header hides on scroll down, shows on scroll up.</p>
+    </section>
+
+    <section style="height: 800px; background: linear-gradient(135deg, var(--color-background) 0%, var(--color-mint) 100%); border-radius: 7px; margin: 40px;"></section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 Apotecha. All rights reserved.</p>
+  </footer>
+
+  <script>
+    (function() {
+      var header = document.querySelector('[data-header]');
+      var toggle = document.querySelector('[data-menu-toggle]');
+      var lastScroll = 0;
+      var headerHeight = header.offsetHeight;
+
+      document.documentElement.style.setProperty('--header-height', headerHeight + 'px');
+
+      window.addEventListener('scroll', function() {
+        var currentScroll = window.pageYOffset;
+        if (currentScroll <= 0) {
+          header.classList.remove('header--hidden');
+          return;
+        }
+        if (currentScroll > lastScroll && currentScroll > headerHeight) {
+          header.classList.add('header--hidden');
+          if (header.classList.contains('header--nav-open')) {
+            header.classList.remove('header--nav-open');
+            toggle.setAttribute('aria-expanded', 'false');
+          }
+        } else {
+          header.classList.remove('header--hidden');
+        }
+        lastScroll = currentScroll;
+      }, { passive: true });
+
+      toggle.addEventListener('click', function() {
+        var isOpen = header.classList.toggle('header--nav-open');
+        toggle.setAttribute('aria-expanded', isOpen);
+      });
+
+      window.addEventListener('resize', function() {
+        headerHeight = header.offsetHeight;
+        document.documentElement.style.setProperty('--header-height', headerHeight + 'px');
+      }, { passive: true });
+    })();
+  </script>
+</body>
+</html>

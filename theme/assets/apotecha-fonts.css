@@ -1,0 +1,165 @@
+/* ==========================================================================
+   Apotecha — Futura PT Font System
+   Extracted from Figma design system (April 2026)
+   ========================================================================== */
+
+/* --- @font-face declarations --- */
+
+@font-face {
+  font-family: 'Futura';
+  src: url('futura-light.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Futura';
+  src: url('futura-book.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Futura';
+  src: url('futura-medium.woff2') format('woff2');
+  font-weight: 450;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Futura';
+  src: url('futura-medium-italic.woff2') format('woff2');
+  font-weight: 450;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Futura';
+  src: url('futura-demi.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Futura';
+  src: url('futura-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Futura';
+  src: url('futura-heavy.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Futura Condensed';
+  src: url('futura-condensed-medium.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: condensed;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Futura Condensed';
+  src: url('futura-condensed-extrabold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-stretch: condensed;
+  font-display: swap;
+}
+
+/* ==========================================================================
+   Apotecha Type System — CSS Custom Properties
+
+   Figma weights:
+     Book   = 400  (primary body/reading weight)
+     Medium = 450  (labels, subtitles, section titles)
+     Demi   = 500
+     Bold   = 700
+     Heavy  = 900
+   ========================================================================== */
+
+:root {
+  --font-futura: 'Futura', 'Futura PT', sans-serif;
+
+  /* Weights (matching Figma exactly) */
+  --fw-light: 200;
+  --fw-book: 400;
+  --fw-medium: 450;
+  --fw-demi: 500;
+  --fw-bold: 700;
+  --fw-heavy: 900;
+
+  /* --- Named type presets --- */
+
+  /* Product Title: Book 32px / 25.6px leading / capitalize */
+  --type-product-title-size: 32px;
+  --type-product-title-weight: 400;
+  --type-product-title-lh: 25.6px;
+
+  /* Product Subtitle: Medium 16px / 21.92px leading */
+  --type-subtitle-size: 16px;
+  --type-subtitle-weight: 450;
+  --type-subtitle-lh: 21.92px;
+
+  /* Category Label: Medium 12px / 16.44px leading */
+  --type-category-size: 12px;
+  --type-category-weight: 450;
+  --type-category-lh: 16.44px;
+
+  /* Price: Book 20px / 16px leading / uppercase */
+  --type-price-size: 20px;
+  --type-price-weight: 400;
+  --type-price-lh: 16px;
+
+  /* CTA / Button: Book 16px / 12.8px leading */
+  --type-cta-size: 16px;
+  --type-cta-weight: 400;
+  --type-cta-lh: 12.8px;
+
+  /* Body: Book 14px / 19.18px leading */
+  --type-body-size: 14px;
+  --type-body-weight: 400;
+  --type-body-lh: 19.18px;
+
+  /* Detail Label: Medium 12px / 16.44px leading */
+  --type-detail-label-size: 12px;
+  --type-detail-label-weight: 450;
+  --type-detail-label-lh: 16.44px;
+
+  /* Detail Body: Book 12px / 9.6px leading */
+  --type-detail-body-size: 12px;
+  --type-detail-body-weight: 400;
+  --type-detail-body-lh: 9.6px;
+
+  /* Small Label (Klarna etc): Book 12px / 9.6px leading */
+  --type-small-size: 12px;
+  --type-small-weight: 400;
+  --type-small-lh: 9.6px;
+
+  /* Section Title: Medium 16px / 21.92px leading */
+  --type-section-title-size: 16px;
+  --type-section-title-weight: 450;
+  --type-section-title-lh: 21.92px;
+
+  /* Bundle List: Book 12px / 16.44px leading */
+  --type-bundle-size: 12px;
+  --type-bundle-weight: 400;
+  --type-bundle-lh: 16.44px;
+
+  /* Star Count: Book 14px / 19.18px leading */
+  --type-star-size: 14px;
+  --type-star-weight: 400;
+  --type-star-lh: 19.18px;
+}

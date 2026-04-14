@@ -1,0 +1,2202 @@
+/* ==========================================================================
+   Apotecha — Horizon Theme Overrides
+   ========================================================================== */
+
+/* --- Font System Overrides --- */
+
+:root {
+  --font-body--family: 'Futura', 'Futura PT', sans-serif;
+  --font-subheading--family: 'Futura', 'Futura PT', sans-serif;
+  --font-heading--family: 'Futura', 'Futura PT', sans-serif;
+  --font-accent--family: 'Futura', 'Futura PT', sans-serif;
+}
+
+/* Global body — Futura Book 14px / 19.18px leading */
+body {
+  font-family: 'Futura', 'Futura PT', sans-serif !important;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19.18px;
+  color: #445c1f;
+}
+
+/* All headings — Futura Book, not bold */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: 'Futura', 'Futura PT', sans-serif !important;
+  font-weight: 400 !important;
+  color: #445c1f;
+}
+
+/* Product title on PDP — Book 32px / 25.6px leading */
+.product-information__title,
+.product__title,
+[class*="product-title"] {
+  font-family: 'Futura', 'Futura PT', sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 32px !important;
+  line-height: 25.6px !important;
+  text-transform: capitalize !important;
+  color: #445c1f !important;
+}
+
+/* Product price — Book 20px / 16px leading / uppercase */
+.product-information__price,
+.price__regular,
+.price-item,
+[class*="product-price"],
+[class*="price"] .money {
+  font-family: 'Futura', 'Futura PT', sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 20px !important;
+  line-height: 16px !important;
+  text-transform: uppercase !important;
+  color: #445c1f !important;
+}
+
+/* Compare-at / sale price */
+.price__sale .price-item--regular,
+.compare-at-price,
+s.money {
+  font-weight: 400 !important;
+  font-size: 14px !important;
+}
+
+/* Product card titles */
+.product-card__title,
+.card__heading a {
+  font-family: 'Futura', 'Futura PT', sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 14px !important;
+  line-height: 1.37 !important;
+  color: #445c1f !important;
+}
+
+/* Product card prices */
+.product-card__price,
+.card__price .money {
+  font-family: 'Futura', 'Futura PT', sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 14px !important;
+  color: #445c1f !important;
+}
+
+/* ==========================================================================
+   Buttons — Full Apotecha System
+   ========================================================================== */
+
+/* Global button reset */
+.button,
+button:not(.button-unstyled),
+[class*="button"]:not(.button-unstyled):not(.close-button),
+.btn,
+input[type="submit"] {
+  font-family: 'Futura', 'Futura PT', sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 16px !important;
+  line-height: 0.8 !important;
+  border-radius: 0 !important;
+  --style-border-radius-buttons-primary: 0px;
+  --style-border-radius-buttons-secondary: 0px;
+}
+
+/* Primary button — green fill #445c1f, cream text */
+.button--primary,
+.button:not(.button-secondary):not(.button-unstyled):not(.close-button):not([class*="remove"]):not([class*="pill"]),
+.product-form__submit,
+.shopify-payment-button__button--unbranded {
+  background-color: #445c1f !important;
+  color: #e9ede6 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  height: 40px;
+  font-weight: 400 !important;
+  font-size: 16px !important;
+  transition: opacity 0.2s;
+}
+
+.product-form__submit:hover,
+.button--primary:hover {
+  opacity: 0.85 !important;
+  background-color: #445c1f !important;
+}
+
+/* Add to Cart button — full width on PDP */
+.product-form__submit {
+  width: 100% !important;
+  height: 40px !important;
+}
+
+/* Secondary button — outline */
+.button-secondary,
+.button--secondary {
+  background: transparent !important;
+  color: #445c1f !important;
+  border: 0.5px solid #445c1f !important;
+  border-radius: 0 !important;
+  height: 40px;
+}
+
+.button-secondary:hover,
+.button--secondary:hover {
+  background: #445c1f !important;
+  color: #e9ede6 !important;
+}
+
+/* Cart checkout button — black */
+.cart__checkout-button,
+button#checkout,
+.cart__ctas .button {
+  background: #000000 !important;
+  color: #e9ede6 !important;
+  border-radius: 0 !important;
+  height: 40px !important;
+}
+
+/* Quick add button on product cards */
+[data-quick-add-button] .button,
+.quick-add__button,
+.quick-add .button {
+  background: #445c1f !important;
+  color: #e9ede6 !important;
+  border-radius: 0 !important;
+  font-size: 14px !important;
+  height: 36px !important;
+}
+
+/* ShopPay / accelerated checkout buttons */
+.shopify-payment-button .shopify-payment-button__button {
+  border-radius: 0 !important;
+}
+
+/* "More payment options" link */
+.shopify-payment-button__button--hidden,
+.payment-terms__link,
+[class*="more-payment"] {
+  font-family: 'Futura', 'Futura PT', sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 12px !important;
+  color: #445c1f !important;
+}
+
+/* Variant/option buttons on PDP */
+.product-option .button,
+.variant-button,
+[class*="variant"] .button {
+  border-radius: 0 !important;
+  border-color: #445c1f !important;
+  font-weight: 400 !important;
+  color: #445c1f !important;
+}
+
+/* Badge pills */
+.badge {
+  border-radius: 0 !important;
+  font-family: 'Futura', 'Futura PT', sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 11px !important;
+}
+
+/* Paragraph and body text */
+p, li, td, th, label, span {
+  font-family: 'Futura', 'Futura PT', sans-serif;
+}
+
+/* Links */
+a {
+  font-family: 'Futura', 'Futura PT', sans-serif;
+  color: #445c1f;
+}
+
+/* Inputs */
+input, textarea, select {
+  font-family: 'Futura', 'Futura PT', sans-serif !important;
+  font-weight: 300;
+  color: #445c1f;
+  border-radius: 0 !important;
+}
+
+/* Quantity selector — Book 12px, 28px height, 0.5px border, 100px wide */
+.quantity-selector,
+quantity-selector-component {
+  border-radius: 0 !important;
+  border-width: 0.5px !important;
+  border-color: #445c1f !important;
+  height: 28px !important;
+  width: 100px !important;
+}
+
+.quantity-selector button,
+.quantity-selector input,
+quantity-selector-component button,
+quantity-selector-component input {
+  font-family: 'Futura', 'Futura PT', sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 12px !important;
+  line-height: 9.6px !important;
+  color: #445c1f !important;
+  height: 28px !important;
+}
+
+/* Announcement bar */
+.announcement-bar,
+.header-announcements {
+  font-family: 'Futura', 'Futura PT', sans-serif !important;
+  font-weight: 300;
+  font-size: 12px;
+}
+
+/* Footer */
+footer, footer * {
+  font-family: 'Futura', 'Futura PT', sans-serif !important;
+}
+
+/* ==========================================================================
+   Header Overrides
+   ========================================================================== */
+
+/* Clean minimal header — matches Apotecha Figma design */
+
+/* Ensure sticky always works smoothly */
+header-component {
+  transition: transform 0.3s ease;
+}
+
+/* Remove announcement bar top border/divider clutter */
+.header-announcements .divider {
+  display: none;
+}
+
+/* Logo sizing */
+.header-logo img,
+.header-logo svg {
+  max-height: 44px;
+  width: auto;
+}
+
+/* Tighten header padding for compact feel */
+.header--compact .header__row--top {
+  padding-block: 12px;
+}
+
+/* Clean icon style — thinner strokes, Apotecha green */
+.header-actions__action svg {
+  stroke-width: 1.5;
+  color: #445c1f;
+}
+
+.header-actions__action:hover svg {
+  opacity: 0.6;
+}
+
+/* Hide customer account/login icon */
+.header-actions__action[href*="account"],
+.header-actions__account,
+customer-account-menu-component,
+shopify-customer-account-menu {
+  display: none !important;
+}
+
+/* Cart count badge */
+.cart-icon__bubble {
+  background: #445c1f;
+  color: #e9ede6;
+  font-family: 'Futura', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+/* Navigation links — clean Futura style */
+.header-menu__primary-link,
+.header__menu-link {
+  font-family: 'Futura', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  color: #445c1f;
+  text-transform: capitalize;
+}
+
+.header-menu__primary-link:hover,
+.header__menu-link:hover {
+  opacity: 0.6;
+}
+
+/* Remove bottom border on header if no divider set */
+.header__row--top,
+.header__row--bottom {
+  border-color: transparent;
+}
+
+/* Mobile drawer — match brand colors */
+.header-drawer__menu-link {
+  font-family: 'Futura', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #445c1f;
+  text-transform: capitalize;
+}
+
+/* Search modal — brand-consistent */
+.predictive-search input {
+  font-family: 'Futura', sans-serif;
+  color: #445c1f;
+}
+
+/* ==========================================================================
+   Homepage Hero Overrides
+   ========================================================================== */
+
+/* Hero — full Apotecha layout override */
+.hero-section .hero__content {
+  align-items: flex-start !important;
+  justify-content: flex-end !important;
+  text-align: left !important;
+}
+
+/* Hero heading — light Futura Book, left-aligned */
+.hero-section [data-type-preset="h1"],
+.hero-section .h1,
+.hero-section h1,
+.hero-section .h2,
+.hero-section h2 {
+  font-family: 'Futura', sans-serif !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.01em;
+  text-align: left !important;
+  font-size: 3rem !important;
+  color: #e9ede6 !important;
+}
+
+.hero-section u {
+  text-decoration: none;
+  border-bottom: 1.5px solid #e9ede6;
+  padding-bottom: 2px;
+}
+
+/* Hero subtitle */
+.hero-section [data-type-preset="rte"],
+.hero-section .rte {
+  text-align: left !important;
+  color: #c6cfbb !important;
+  font-family: 'Futura', sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 1.125rem !important;
+}
+
+/* Hero button — white filled, sharp corners, left-aligned */
+.hero-section .button,
+.hero-section .button-secondary,
+.hero-section [class*="button"],
+.hero-section a[class*="button"] {
+  background: #e9ede6 !important;
+  color: #2a3e0d !important;
+  border: none !important;
+  border-radius: 0 !important;
+  --border-radius: 0 !important;
+  --button-border-radius: 0 !important;
+  --style-border-radius-buttons-primary: 0 !important;
+  --style-border-radius-buttons-secondary: 0 !important;
+  font-family: 'Futura', sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em;
+  padding: 18px 72px !important;
+  transition: opacity 0.2s;
+}
+
+.hero-section .button:hover,
+.hero-section .button-secondary:hover,
+.hero-section [class*="button"]:hover {
+  opacity: 0.85;
+  background: #e9ede6 !important;
+  color: #2a3e0d !important;
+}
+
+/* ==========================================================================
+   Cart Drawer — Apotecha Branding
+   ========================================================================== */
+
+/* Cart drawer background & typography */
+.cart-drawer,
+.cart-drawer__inner {
+  background-color: #e9ede6 !important;
+  color: #445c1f !important;
+  font-family: 'Futura', sans-serif !important;
+}
+
+/* Cart drawer header */
+.cart-drawer__head {
+  background-color: #e9ede6 !important;
+  border-bottom: 1px solid rgba(68, 92, 31, 0.15) !important;
+}
+
+.cart-drawer__head *,
+.cart-drawer__title {
+  color: #445c1f !important;
+  font-family: 'Futura', sans-serif !important;
+  font-weight: 500 !important;
+}
+
+/* Close button */
+.cart-drawer__close svg,
+.cart-drawer__head .svg-wrapper svg {
+  color: #445c1f !important;
+}
+
+/* Cart item styling */
+.cart-product__name,
+.cart-product__name a {
+  color: #445c1f !important;
+  font-family: 'Futura', sans-serif !important;
+  font-weight: 400 !important;
+}
+
+.cart-product__price,
+.cart-product__discounted-price {
+  color: #445c1f !important;
+  font-family: 'Futura', sans-serif !important;
+}
+
+/* Quantity selector in cart */
+.cart-product .quantity-selector,
+.cart-product quantity-selector-component {
+  border-color: #445c1f !important;
+  border-radius: 0 !important;
+}
+
+.cart-product .quantity-selector button,
+.cart-product quantity-selector-component button {
+  color: #445c1f !important;
+}
+
+/* Remove/delete button */
+.cart-product__remove,
+.cart-product__remove svg {
+  color: #445c1f !important;
+  opacity: 0.6;
+}
+
+.cart-product__remove:hover,
+.cart-product__remove:hover svg {
+  opacity: 1;
+}
+
+/* Cart totals */
+.cart-totals,
+.cart-totals__total-label,
+.cart-totals__total-value {
+  color: #445c1f !important;
+  font-family: 'Futura', sans-serif !important;
+}
+
+.cart-totals__total-label {
+  font-weight: 400 !important;
+}
+
+.cart-totals__total-value {
+  font-weight: 500 !important;
+}
+
+/* Checkout button — black bg, cream text, sharp corners */
+.cart__checkout-button,
+.cart__ctas .button,
+button#checkout {
+  background: #000000 !important;
+  color: #e9ede6 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  --border-radius: 0 !important;
+  font-family: 'Futura', sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+}
+
+.cart__checkout-button:hover,
+button#checkout:hover {
+  opacity: 0.85 !important;
+}
+
+/* Cart note & discount inputs */
+.cart-note__summary,
+.cart-note__label,
+.cart-discount__summary,
+.cart-discount__label {
+  color: #445c1f !important;
+  font-family: 'Futura', sans-serif !important;
+}
+
+.cart-note__instructions {
+  border-color: rgba(68, 92, 31, 0.3) !important;
+  border-radius: 0 !important;
+  font-family: 'Futura', sans-serif !important;
+  color: #445c1f !important;
+  background: transparent !important;
+}
+
+.cart-discount__input {
+  border-color: rgba(68, 92, 31, 0.3) !important;
+  border-radius: 0 !important;
+  font-family: 'Futura', sans-serif !important;
+  color: #445c1f !important;
+}
+
+.cart-discount__button {
+  background: #445c1f !important;
+  color: #e9ede6 !important;
+  border-radius: 0 !important;
+}
+
+/* Tax note */
+.cart-totals__tax-note,
+.cart-totals__tax-note small {
+  color: rgba(68, 92, 31, 0.6) !important;
+  font-family: 'Futura', sans-serif !important;
+}
+
+/* Cart summary footer area */
+.cart-drawer__summary {
+  background-color: #e9ede6 !important;
+  border-top: 1px solid rgba(68, 92, 31, 0.15) !important;
+}
+
+/* Dividers inside cart */
+.cart-actions,
+.cart-actions__divider {
+  border-color: rgba(68, 92, 31, 0.15) !important;
+}
+
+/* Empty cart state */
+.cart-drawer__empty,
+.cart-drawer__empty * {
+  color: #445c1f !important;
+  font-family: 'Futura', sans-serif !important;
+}
+
+/* Product image in cart — sharp corners */
+.cart-product__image,
+.cart-product__media {
+  border-radius: 0 !important;
+}
+
+/* Additional checkout buttons (ShopPay etc.) */
+.additional-checkout-buttons .shopify-cleanslate button {
+  border-radius: 0 !important;
+}
+
+/* Discount pill */
+.cart-discount__pill {
+  border-radius: 0 !important;
+  background: rgba(68, 92, 31, 0.12) !important;
+  color: #445c1f !important;
+}
+
+/* ==========================================================================
+   Cart Recommendations
+   ========================================================================== */
+
+.apotecha-cart-recs {
+  background: rgba(65, 93, 25, 0.21);
+  padding: 20px;
+  margin-top: 12px;
+}
+
+/* Only show recs in the cart drawer, not the full cart page */
+.cart-page .apotecha-cart-recs,
+.template-cart .apotecha-cart-recs {
+  display: none;
+}
+
+.apotecha-cart-recs__heading {
+  font-family: 'Futura', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #445c1f;
+  margin: 0 0 16px;
+}
+
+.apotecha-cart-recs__list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.apotecha-cart-recs__item {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.apotecha-cart-recs__img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border: 1px solid rgba(68, 92, 31, 0.15);
+  flex-shrink: 0;
+}
+
+.apotecha-cart-recs__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.apotecha-cart-recs__title {
+  font-family: 'Futura', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #445c1f;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.apotecha-cart-recs__title:hover {
+  opacity: 0.7;
+}
+
+.apotecha-cart-recs__price {
+  font-family: 'Futura', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  color: #445c1f;
+  margin: 0 0 8px;
+}
+
+.apotecha-cart-recs__atc {
+  font-family: 'Futura', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #e9ede6;
+  background: #445c1f;
+  border: none;
+  border-radius: 0;
+  padding: 8px 20px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.apotecha-cart-recs__atc:hover {
+  opacity: 0.8;
+}
+
+/* ==========================================================================
+   Cart Page Overrides
+   ========================================================================== */
+
+/* Cart page summary sidebar — force readable colors */
+.cart-summary,
+.cart-summary--extend {
+  background: #e9ede6 !important;
+  color: #445c1f !important;
+}
+
+.cart-summary *,
+.cart-summary .cart-totals__total-label,
+.cart-summary .cart-totals__total-value,
+.cart-summary .cart-totals__tax-note,
+.cart-summary .cart-totals__tax-note small,
+.cart-summary .cart-discount__label,
+.cart-summary .cart-note__label {
+  color: #445c1f !important;
+}
+
+/* Cart page checkout button */
+.cart-page .cart__checkout-button,
+.template-cart .cart__checkout-button,
+.template-cart button#checkout {
+  background: #000000 !important;
+  color: #e9ede6 !important;
+  border-radius: 0 !important;
+}
+
+/* ==========================================================================
+   Password Page
+   ========================================================================== */
+
+/* Make the password footer prominent */
+.password-footer {
+  position: fixed !important;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px !important;
+  text-align: center !important;
+  background: #e9ede6 !important;
+  z-index: 10;
+}
+
+/* Style the "Enter using password" button */
+.password-footer button,
+.password-footer [on\\:click] {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  font-family: 'Futura', sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 14px !important;
+  color: #445c1f !important;
+  background: none !important;
+  border: none !important;
+  border-bottom: 1px solid #445c1f !important;
+  padding: 0 0 2px !important;
+  cursor: pointer !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  box-shadow: none !important;
+}
+
+/* Password dialog — Apotecha styling */
+.password-dialog {
+  background: #e9ede6 !important;
+  color: #445c1f !important;
+  font-family: 'Futura', sans-serif !important;
+}
+
+.password-dialog__title {
+  color: #445c1f !important;
+  font-family: 'Futura', sans-serif !important;
+}
+
+.password-dialog input[type="password"] {
+  border-radius: 0 !important;
+  border-color: #445c1f !important;
+  font-family: 'Futura', sans-serif !important;
+  color: #445c1f !important;
+}
+
+.password-dialog__submit-button {
+  background: #000 !important;
+  color: #e9ede6 !important;
+  border-radius: 0 !important;
+  font-family: 'Futura', sans-serif !important;
+}
+
+/* ==========================================================================
+   PDP — Complete Layout Overrides (Figma match)
+   ========================================================================== */
+
+/* Product details column — CSS Grid with 2 columns for price+quantity row */
+.product-information .product-details {
+  display: grid !important;
+  grid-template-columns: auto 1fr !important;
+  gap: 0 !important;
+}
+
+/* All blocks span full width by default */
+.product-information .product-details > * {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  grid-column: 1 / -1 !important;
+}
+
+/* Price block (5th child): left column only, align self to center */
+.product-information .product-details > :nth-child(5) {
+  grid-column: 2 / 3 !important;
+  grid-row: 6 !important;
+  align-self: start !important;
+  justify-self: end !important;
+  margin-bottom: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Buy buttons block (6th child): sits in left column, same row as price */
+.product-information .product-details > :nth-child(6) {
+  grid-column: 1 / 2 !important;
+  grid-row: 6 !important;
+}
+
+/* ----------------------------------------------------------------
+   Price + Quantity on same row:
+   Make the buy-buttons block (6th child) the positioning context.
+   Float the price block (5th child) into the quantity row using
+   negative margin to collapse it into the buy-buttons space.
+   ---------------------------------------------------------------- */
+
+/* Price block: remove from flow, sit on same line as quantity */
+.product-information .product-details > :nth-child(5) {
+  position: absolute !important;
+  right: 0 !important;
+  margin-bottom: 0 !important;
+  z-index: 10 !important;
+  /* Align vertically with quantity selector top */
+}
+
+/* Buy buttons block: needs relative positioning as anchor */
+.product-information .product-details > :nth-child(6) {
+  position: relative !important;
+}
+
+/* The product-details needs relative for the absolute price */
+.product-information .product-details {
+  position: relative !important;
+}
+
+/* Price typography: right-aligned, vertically centered with quantity */
+.product-information .product-details > :nth-child(5) .price,
+.product-information .product-details > :nth-child(5) .price-item {
+  font-family: 'Futura', 'Futura PT', sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 20px !important;
+  line-height: 28px !important;
+  text-transform: uppercase !important;
+  color: #445c1f !important;
+  text-align: right !important;
+}
+
+/* Stars → Category: 15px gap */
+.product-information [class*="review"],
+.product-information .star-rating-wrapper {
+  margin-bottom: 15px !important;
+}
+
+/* Category label: 40px gap below to title */
+.product-information .product-details > [data-block-id="category_label"] {
+  margin-bottom: 40px !important;
+}
+
+/* Title group (title + subtitle): 10px internal, 25px after */
+.product-information .product-details .group-block,
+.product-information .product-details [data-block-id="header_group"] {
+  margin-bottom: 25px !important;
+}
+
+/* Description: 50px gap below to quantity/ATC */
+.product-information .product-details > [data-block-id="description"] {
+  margin-bottom: 50px !important;
+}
+
+/* Buy buttons (quantity + ATC): 15px gap below */
+.product-information .product-details > [data-block-id="buy_btns"],
+.product-information .buy-buttons {
+  margin-bottom: 15px !important;
+}
+
+/* Klarna: 20px gap below to info rows */
+.product-information .product-details > [data-block-id="klarna"] {
+  margin-bottom: 20px !important;
+}
+
+/* Info rows: 30px gap below to bundle */
+.product-information .product-details > [data-block-id="product_details"] {
+  margin-bottom: 30px !important;
+}
+
+/* Spacing per block — using grid rows now */
+/* Block order: 1=stars, 2=category, 3=header, 4=description, 5=price(shared row), 6=buy(shared row), 7=klarna, 8=details, 9=bundle */
+.product-information .product-details > :nth-child(1) { margin-bottom: 15px !important; }  /* stars */
+.product-information .product-details > :nth-child(2) { margin-bottom: 40px !important; }  /* category */
+.product-information .product-details > :nth-child(3) { margin-bottom: 25px !important; }  /* title group */
+.product-information .product-details > :nth-child(4) { margin-bottom: 30px !important; }  /* description */
+.product-information .product-details > :nth-child(5) { margin-bottom: 0 !important; }     /* price — same row as buy */
+.product-information .product-details > :nth-child(6) { margin-bottom: 15px !important; }  /* buy buttons */
+.product-information .product-details > :nth-child(7) { margin-bottom: 20px !important; grid-column: 1 / -1 !important; }  /* klarna */
+.product-information .product-details > :nth-child(8) { margin-bottom: 30px !important; grid-column: 1 / -1 !important; }  /* info rows */
+.product-information .product-details > :nth-child(9) { margin-bottom: 0 !important; grid-column: 1 / -1 !important; }     /* bundle */
+
+/* Space between quantity row and ATC button */
+.product-information .buy-buttons__group {
+  gap: 20px !important;
+  margin-bottom: 15px !important;
+}
+
+/* Space between ATC and the next elements */
+.product-information .buy-buttons__ctas {
+  margin-top: 15px !important;
+}
+
+/* Hide accelerated checkout (PayPal, ShopPay, "More payment options") on PDP */
+.product-information .additional-checkout-buttons,
+.product-information .shopify-payment-button,
+.product-information shopify-accelerated-checkout,
+.product-information shopify-accelerated-checkout-cart,
+.product-information [class*="accelerated-checkout"],
+.product-information .payment-terms,
+.product-information shopify-payment-terms {
+  display: none !important;
+}
+
+/* Hide old bundle/set from product description */
+.apotecha-bundle,
+.product-information .apotecha-bundle {
+  display: none !important;
+}
+
+/* Product title — exact Figma: Book 32px / 25.6px */
+.product-information h1,
+.product-information .h1,
+.product-information .h3 h1 {
+  font-family: 'Futura', 'Futura PT', sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 32px !important;
+  line-height: 25.6px !important;
+  text-transform: capitalize !important;
+  color: #445c1f !important;
+}
+
+/* ==========================================================================
+   PDP Buy Buttons — Exact Figma Layout
+   Horizon renders: .product-form-buttons > quantity-selector-component + add-to-cart-component + accelerated-checkout
+   ========================================================================== */
+
+/* The form buttons container: stack vertically */
+.product-information .product-form-buttons {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 15px !important;
+  width: 100% !important;
+}
+
+/* Unstacked mode puts them in a row — override that */
+.product-information .product-form-buttons:not(.product-form-buttons--stacked) {
+  flex-direction: column !important;
+}
+
+/* Quantity selector: 28px height, 100px wide, 0.5px border */
+.product-information .product-form-buttons quantity-selector-component {
+  width: 100px !important;
+  height: 28px !important;
+  max-height: 28px !important;
+  flex: 0 0 auto !important;
+  order: 1 !important;
+  overflow: hidden !important;
+}
+
+.product-information .product-form-buttons quantity-selector-component .quantity-selector {
+  height: 28px !important;
+  max-height: 28px !important;
+  width: 100px !important;
+  border: 0.5px solid #445c1f !important;
+  border-radius: 0 !important;
+  --button-size: 28px !important;
+  --button-size-md: 28px !important;
+  --minimum-touch-target: 28px !important;
+}
+
+.product-information .product-form-buttons quantity-selector-component button {
+  height: 28px !important;
+  max-height: 28px !important;
+  min-height: 0 !important;
+  width: 28px !important;
+  min-width: 0 !important;
+  padding: 0 !important;
+  font-family: 'Futura', 'Futura PT', sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 12px !important;
+  color: #445c1f !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.product-information .product-form-buttons quantity-selector-component input {
+  height: 28px !important;
+  max-height: 28px !important;
+  min-height: 0 !important;
+  min-width: 0 !important;
+  width: 44px !important;
+  padding: 0 !important;
+  font-family: 'Futura', 'Futura PT', sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 12px !important;
+  color: #445c1f !important;
+  border-radius: 0 !important;
+  text-align: center;
+}
+
+/* Add to Cart button: full width, 40px, green, no icon */
+.product-information .product-form-buttons add-to-cart-component {
+  width: 100% !important;
+  order: 2 !important;
+}
+
+.product-information .product-form-buttons add-to-cart-component button,
+.product-information .product-form-buttons .add-to-cart-button {
+  width: 100% !important;
+  height: 40px !important;
+  min-height: 40px !important;
+  max-height: 40px !important;
+  background: #445c1f !important;
+  color: #e9ede6 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  font-family: 'Futura', 'Futura PT', sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 16px !important;
+  line-height: 40px !important;
+  padding: 0 16px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0 !important;
+  --button-size: 40px !important;
+}
+
+.product-information .product-form-buttons add-to-cart-component button:hover {
+  opacity: 0.85 !important;
+  background: #445c1f !important;
+}
+
+/* Hide the cart icon from ATC button — use width:0 not display:none to preserve text flow */
+.product-information .product-form-buttons .add-to-cart-icon,
+.product-information .product-form-buttons add-to-cart-component .svg-wrapper.add-to-cart-icon {
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  flex: 0 0 0px !important;
+}
+
+/* Hide the checkmark burst — it sits inline and breaks "Add to cart" text */
+.product-information .product-form-buttons .add-to-cart__added {
+  position: absolute !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+}
+
+/* When triggered (after click), show it as full overlay */
+.product-information .product-form-buttons add-to-cart-component.is-added .add-to-cart__added {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: #445c1f !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 5 !important;
+}
+
+/* Make the ATC button position relative so the checkmark overlay works */
+.product-information .product-form-buttons add-to-cart-component button {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* Hide accelerated checkout completely */
+.product-information .product-form-buttons [data-block-type="accelerated-checkout"],
+.product-information .product-form-buttons shopify-accelerated-checkout {
+  display: none !important;
+  order: 99 !important;
+}
+
+/* Quantity selector — Figma: 28px height, 100px wide, 0.5px border */
+.product-information .quantity-selector,
+.product-information quantity-selector-component {
+  height: 28px !important;
+  min-height: 28px !important;
+  width: 100px !important;
+  border-radius: 0 !important;
+  border: 0.5px solid #445c1f !important;
+}
+
+.product-information .quantity-selector button,
+.product-information .quantity-selector input,
+.product-information quantity-selector-component button,
+.product-information quantity-selector-component input {
+  height: 28px !important;
+  min-height: 28px !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  border-radius: 0 !important;
+  color: #445c1f !important;
+}
+
+/* PDP body description text */
+.apotecha-pdp-body {
+  font-family: 'Futura', 'Futura PT', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19.18px;
+  color: #445c1f;
+  margin: 0;
+  max-width: 347px;
+}
+
+/* ==========================================================================
+   PDP — Product Details Info Rows (Figma)
+   ========================================================================== */
+
+.apotecha-pdp-details {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+
+.apotecha-pdp-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-bottom: 5px;
+  border-bottom: 0.5px solid #445c1f;
+}
+
+.apotecha-pdp-detail:last-child {
+  border-bottom: 0.5px solid #445c1f;
+}
+
+.apotecha-pdp-detail__label {
+  font-family: 'Futura', 'Futura PT', sans-serif;
+  font-weight: 450;
+  font-size: 12px;
+  line-height: 16.44px;
+  color: #445c1f;
+  margin: 0;
+}
+
+.apotecha-pdp-detail__text {
+  font-family: 'Futura', 'Futura PT', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 9.6px;
+  color: #445c1f;
+  margin: 0;
+}
+
+/* ==========================================================================
+   PDP — Bundle Card (Figma)
+   ========================================================================== */
+
+.apotecha-pdp-bundle {
+  background: rgba(65, 93, 25, 0.2);
+  border: 0.5px solid #445c1f;
+  padding: 22px;
+  width: 100%;
+}
+
+.apotecha-pdp-bundle__title {
+  font-family: 'Futura', 'Futura PT', sans-serif;
+  font-weight: 450;
+  font-size: 16px;
+  line-height: 21.92px;
+  color: #445c1f;
+  margin: 0 0 8px;
+}
+
+.apotecha-pdp-bundle__desc {
+  font-family: 'Futura', 'Futura PT', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19.18px;
+  color: #445c1f;
+  margin: 0 0 20px;
+}
+
+.apotecha-pdp-bundle__thumbs {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 16px;
+}
+
+.apotecha-pdp-bundle__thumb {
+  width: 99px;
+  height: 99px;
+  border: 0.5px solid #445c1f;
+  overflow: hidden;
+}
+
+.apotecha-pdp-bundle__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.apotecha-pdp-bundle__footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.apotecha-pdp-bundle__list {
+  font-family: 'Futura', 'Futura PT', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16.44px;
+  color: #445c1f;
+}
+
+.apotecha-pdp-bundle__list p {
+  margin: 0;
+}
+
+.apotecha-pdp-bundle__total {
+  font-family: 'Futura', 'Futura PT', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16.44px;
+  color: #445c1f;
+  text-align: right;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.apotecha-pdp-bundle__atc-wrap {
+  width: 100%;
+}
+
+.apotecha-pdp-bundle__atc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 40px;
+  background: #445c1f;
+  color: #e9ede6;
+  border: none;
+  font-family: 'Futura', 'Futura PT', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 12.8px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.apotecha-pdp-bundle__atc:hover {
+  opacity: 0.85;
+}
+
+/* --- Product Hero: 60/40 Split --- */
+
+@media screen and (min-width: 1200px) {
+  .product-information--media-left .product-information__grid {
+    grid-template-columns: 3fr 2fr;
+  }
+  .product-information--media-right .product-information__grid {
+    grid-template-columns: 2fr 3fr;
+  }
+}
+
+/* --- Guarantee Badge --- */
+
+.apotecha-guarantee {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(65, 93, 25, 0.21);
+  padding: 12px 16px;
+  margin-top: 8px;
+}
+
+.apotecha-guarantee__circle {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 50%;
+  border: 1.5px solid #445c1f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.1;
+  color: #445c1f;
+}
+
+.apotecha-guarantee p {
+  font-size: 16px;
+  font-weight: 300;
+  margin: 0;
+  color: #445c1f;
+}
+
+/* --- Benefits List --- */
+
+.apotecha-benefits {
+  list-style: disc;
+  padding-left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+}
+
+.apotecha-benefits li {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.4;
+  color: #445c1f;
+}
+
+.apotecha-benefits li strong {
+  font-weight: 700;
+}
+
+/* --- Klarna Notice --- */
+
+.apotecha-klarna {
+  font-size: 12px;
+  font-weight: 300;
+  color: #445c1f;
+  margin: 0;
+}
+
+/* --- Bundle / The Set --- */
+
+.apotecha-bundle {
+  background: #c6cfbb;
+  padding: 24px;
+  margin-top: 16px;
+}
+
+.apotecha-bundle__title {
+  font-weight: 500;
+  font-size: 15px;
+  margin: 0 0 16px;
+  color: #445c1f;
+}
+
+.apotecha-bundle__items {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.apotecha-bundle__thumb {
+  width: 80px;
+  height: 80px;
+  border: 1px solid #445c1f;
+  background: #e9ede6;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.apotecha-bundle__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.apotecha-bundle__plus {
+  font-size: 18px;
+  font-weight: 300;
+  color: #445c1f;
+  padding: 0 2px;
+}
+
+.apotecha-bundle__total {
+  font-weight: 400;
+  font-size: 15px;
+  margin: 0 0 12px;
+  color: #445c1f;
+}
+
+.apotecha-bundle__atc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000000;
+  color: #e9ede6;
+  font-family: 'Futura', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 14px 32px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  max-width: 280px;
+}
+
+.apotecha-bundle__atc:hover {
+  opacity: 0.85;
+}
+
+.apotecha-bundle__list {
+  list-style: none;
+  padding: 0;
+  margin: 14px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.apotecha-bundle__list li {
+  font-size: 13px;
+  font-weight: 300;
+  color: #445c1f;
+}
+
+/* ==========================================================================
+   4 Reasons Section
+   ========================================================================== */
+
+.apotecha-reasons__heading {
+  text-align: center;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 1.15;
+  margin-bottom: 60px;
+  text-transform: capitalize;
+  color: #445c1f;
+}
+
+.apotecha-reasons__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: start;
+}
+
+.apotecha-reasons__image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: linear-gradient(180deg, #587c25 0%, #2a3e0d 100%);
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.apotecha-reasons__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.apotecha-reasons__list {
+  padding: 40px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.apotecha-reasons__num {
+  font-weight: 500;
+  font-size: 24px;
+  color: #445c1f;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.apotecha-reasons__item h3 {
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1;
+  font-style: italic;
+  margin: 0 0 12px;
+  color: #445c1f;
+}
+
+.apotecha-reasons__item p {
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.5;
+  max-width: 345px;
+  color: #445c1f;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .apotecha-reasons__content {
+    grid-template-columns: 1fr;
+  }
+  .apotecha-reasons__list {
+    padding: 32px 0;
+  }
+}
+
+/* ==========================================================================
+   Comparison Section
+   ========================================================================== */
+
+.apotecha-comparison {
+  background: linear-gradient(135deg, #e9ede6 0%, #75a68a 100%);
+  border-radius: 7px;
+  padding: 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.apotecha-comparison__left h2 {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 1.15;
+  color: #445c1f;
+  margin: 0;
+}
+
+.apotecha-comparison__left h2 em {
+  font-style: normal;
+  font-weight: 700;
+}
+
+.apotecha-comparison__table {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 0;
+  align-items: start;
+}
+
+.apotecha-comparison__features {
+  background: #c6cfbb;
+  border-radius: 24px;
+  padding: 48px 20px 24px;
+  list-style: none;
+  margin: 0;
+}
+
+.apotecha-comparison__features li {
+  font-size: 13px;
+  font-weight: 400;
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(68, 92, 31, 0.15);
+  color: #445c1f;
+}
+
+.apotecha-comparison__features li:last-child {
+  border-bottom: none;
+}
+
+.apotecha-comparison__col {
+  padding: 16px 20px;
+  text-align: center;
+  border-radius: 24px;
+  min-width: 80px;
+}
+
+.apotecha-comparison__col--us {
+  background: linear-gradient(180deg, #587c25 0%, #2a3e0d 100%);
+  color: #e9ede6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.apotecha-comparison__col--others {
+  border: 1px solid #445c1f;
+  color: #445c1f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.apotecha-comparison__col-title {
+  font-weight: 500;
+  font-size: 13px;
+  margin: 0 0 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid currentColor;
+  width: 100%;
+  text-align: center;
+}
+
+.apotecha-check,
+.apotecha-x {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 0;
+  font-size: 16px;
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.apotecha-comparison__col--others .apotecha-check,
+.apotecha-comparison__col--others .apotecha-x {
+  border-bottom-color: rgba(68, 92, 31, 0.15);
+}
+
+.apotecha-check:last-child,
+.apotecha-x:last-child {
+  border-bottom: none;
+}
+
+@media (max-width: 900px) {
+  .apotecha-comparison {
+    grid-template-columns: 1fr;
+    padding: 32px 20px;
+  }
+}
+
+/* ==========================================================================
+   FAQ Section
+   ========================================================================== */
+
+.apotecha-faq h2 {
+  font-weight: 500;
+  font-size: 32px;
+  text-align: center;
+  margin: 0 0 40px;
+  color: #445c1f;
+}
+
+.apotecha-faq__list {
+  max-width: 1068px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.apotecha-faq__item {
+  border: 1px solid #445c1f;
+}
+
+.apotecha-faq__item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 27px;
+  font-family: 'Futura', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #445c1f;
+  cursor: pointer;
+  list-style: none;
+}
+
+.apotecha-faq__item summary::-webkit-details-marker {
+  display: none;
+}
+
+.apotecha-faq__item summary::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #445c1f;
+  border-bottom: 2px solid #445c1f;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  margin-left: 16px;
+}
+
+.apotecha-faq__item[open] summary::after {
+  transform: rotate(-135deg);
+}
+
+.apotecha-faq__item p {
+  padding: 0 27px 16px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #445c1f;
+  margin: 0;
+}
+
+/* ==========================================================================
+   Clean Ingredients Section
+   ========================================================================== */
+
+.apotecha-ingredients {
+  text-align: center;
+}
+
+.apotecha-ingredients__tagline {
+  font-weight: 500;
+  font-size: 32px;
+  font-style: italic;
+  margin: 0 0 60px;
+  color: #445c1f;
+}
+
+.apotecha-ingredients__tagline em {
+  font-style: italic;
+}
+
+.apotecha-ingredients__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 33px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.apotecha-ingredients__item {
+  text-align: center;
+}
+
+.apotecha-ingredients__icon {
+  width: 30px;
+  height: 37px;
+  margin: 0 auto 10px;
+  color: #445c1f;
+  display: block;
+}
+
+.apotecha-ingredients__item h3 {
+  font-weight: 700;
+  font-size: 16px;
+  margin: 0 0 8px;
+  color: #445c1f;
+}
+
+.apotecha-ingredients__item p {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.4;
+  max-width: 240px;
+  margin: 0 auto;
+  color: #445c1f;
+}
+
+@media (max-width: 750px) {
+  .apotecha-ingredients__grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* ==========================================================================
+   Homepage — Reviews Section
+   ========================================================================== */
+
+.apotecha-reviews {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.apotecha-reviews__heading {
+  font-family: 'Futura', sans-serif;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 1.15;
+  text-align: center;
+  color: #445c1f;
+  margin: 0 0 48px;
+}
+
+.apotecha-reviews__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.apotecha-review-card {
+  border: 1px solid rgba(68, 92, 31, 0.15);
+  border-radius: 0;
+  overflow: hidden;
+  background: #e9ede6;
+  transition: transform 0.2s ease;
+}
+
+.apotecha-review-card:hover {
+  transform: translateY(-3px);
+}
+
+.apotecha-review-card__image {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  background: linear-gradient(180deg, #587c25 0%, #2a3e0d 100%);
+}
+
+.apotecha-review-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.apotecha-review-card__body {
+  padding: 20px;
+}
+
+.apotecha-review-card__author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.apotecha-review-card__avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #c6cfbb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: #445c1f;
+  flex-shrink: 0;
+}
+
+.apotecha-review-card__name {
+  font-family: 'Futura', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  color: #445c1f;
+}
+
+.apotecha-review-card__stars {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 12px;
+}
+
+.apotecha-review-card__stars svg {
+  width: 14px;
+  height: 14px;
+  fill: #445c1f;
+}
+
+.apotecha-review-card__text {
+  font-family: 'Futura', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #445c1f;
+  margin: 0;
+}
+
+@media (max-width: 1100px) {
+  .apotecha-reviews__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 750px) {
+  .apotecha-reviews__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .apotecha-reviews__heading {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .apotecha-reviews__grid {
+    grid-template-columns: 1fr;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+
+/* ==========================================================================
+   Homepage — Brand Story Section
+   ========================================================================== */
+
+.apotecha-story {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.apotecha-story__text {
+  max-width: 480px;
+}
+
+.apotecha-story__heading {
+  font-family: 'Futura', sans-serif;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 1.1;
+  color: #445c1f;
+  margin: 0 0 20px;
+}
+
+.apotecha-story__body {
+  font-family: 'Futura', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #445c1f;
+  margin: 0 0 28px;
+}
+
+.apotecha-story__cta {
+  display: inline-block;
+  font-family: 'Futura', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #445c1f;
+  border: 1.5px solid #445c1f;
+  padding: 14px 32px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.apotecha-story__cta:hover {
+  background: #445c1f;
+  color: #e9ede6;
+}
+
+.apotecha-story__image-wrap {
+  overflow: hidden;
+}
+
+.apotecha-story__hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  min-height: 500px;
+}
+
+@media (max-width: 900px) {
+  .apotecha-story {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .apotecha-story__text {
+    max-width: 100%;
+  }
+  .apotecha-story__heading {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 550px) {
+  .apotecha-story__images {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  .apotecha-story__card--large {
+    grid-row: auto;
+  }
+}
+
+/* ==========================================================================
+   Product Grid — Aesop-Inspired Layout
+   ========================================================================== */
+
+/* Grid: zero gaps, dividers via borders */
+.section-resource-list .resource-list--grid {
+  --resource-list-column-gap-desktop: 0px !important;
+  --resource-list-row-gap-desktop: 0px !important;
+  --resource-list-column-gap: 0px !important;
+  --resource-list-row-gap: 0px !important;
+  column-gap: 0 !important;
+  row-gap: 0 !important;
+  border-top: 1px solid rgba(68, 92, 31, 0.12);
+  border-bottom: 1px solid rgba(68, 92, 31, 0.12);
+}
+
+/* Vertical divider between cards */
+.section-resource-list .resource-list--grid > .resource-list__item {
+  border-left: 1px solid rgba(68, 92, 31, 0.12);
+}
+
+.section-resource-list .resource-list--grid > .resource-list__item:first-child {
+  border-left: none;
+}
+
+/* Card content: centered column, no extra gaps */
+.section-resource-list .product-card__content {
+  align-items: center !important;
+  text-align: center;
+  gap: 0 !important;
+  --product-card-gap: 0px !important;
+  padding: 0 !important;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ---- IMAGE AREA ---- */
+/* Card gallery: warm beige bg, forced tall aspect ratio */
+.section-resource-list .card-gallery {
+  background-color: #f0ece4 !important;
+  aspect-ratio: 4 / 5 !important;
+  width: 100% !important;
+}
+
+/* Slideshow chain: fill the card-gallery completely */
+.section-resource-list .card-gallery slideshow-component {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.section-resource-list .card-gallery slideshow-container {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.section-resource-list .card-gallery slideshow-slides {
+  height: 100% !important;
+  width: 100% !important;
+  min-height: 0 !important;
+}
+
+.section-resource-list .card-gallery slideshow-slide {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+/* Media container: fill the slide, use contain so product floats on beige bg */
+.section-resource-list .card-gallery .product-media-container {
+  width: 100% !important;
+  height: 100% !important;
+  aspect-ratio: unset !important;
+  max-height: none !important;
+  padding: 32px 24px !important;
+  box-sizing: border-box !important;
+}
+
+.section-resource-list .card-gallery .product-media-container img {
+  object-fit: contain !important;
+  width: 100% !important;
+  height: 100% !important;
+  aspect-ratio: unset !important;
+  mix-blend-mode: multiply;
+}
+
+/* Placeholder SVGs (for products without images) */
+.section-resource-list .card-gallery svg {
+  width: 100% !important;
+  height: 100% !important;
+  aspect-ratio: unset !important;
+}
+
+/* ---- TEXT AREA ---- */
+/* Product title: centered, Futura Demi */
+.section-resource-list product-card product-title,
+.section-resource-list product-card [class*="product-title"] {
+  width: 100% !important;
+  text-align: center !important;
+  padding: 20px 16px 4px !important;
+}
+
+.section-resource-list product-card product-title a,
+.section-resource-list product-card [class*="product-title"] a {
+  font-family: 'Futura', 'Futura PT', sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 15px !important;
+  line-height: 1.3 !important;
+  color: #1a1a1a !important;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+
+/* Price: centered, lighter weight */
+.section-resource-list product-card [class*="price"] {
+  width: 100% !important;
+  text-align: center !important;
+  justify-content: center !important;
+  padding: 4px 16px 24px !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  color: #555 !important;
+  line-height: 1.4 !important;
+}
+
+.section-resource-list product-card .price-item,
+.section-resource-list product-card .money {
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  color: #555 !important;
+  text-transform: none !important;
+}
+
+/* ---- QUICK ADD: full-width dark bar, slides up on hover ---- */
+.section-resource-list .quick-add {
+  position: absolute !important;
+  inset: auto 0 0 0 !important;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.section-resource-list .quick-add .shopify-product-form {
+  justify-content: stretch !important;
+  align-items: flex-end !important;
+}
+
+.section-resource-list .quick-add__button {
+  position: relative !important;
+  right: auto !important;
+  bottom: auto !important;
+  width: 100% !important;
+  border-radius: 0 !important;
+  border: none !important;
+  background: #3d3d3d !important;
+  color: #fff !important;
+  height: 52px !important;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.3s ease, transform 0.3s ease !important;
+  pointer-events: all;
+  backdrop-filter: none !important;
+  padding: 0 24px !important;
+}
+
+.section-resource-list .quick-add__button .add-to-cart-text {
+  background: transparent !important;
+  color: #fff !important;
+  border-radius: 0 !important;
+  justify-content: center !important;
+  width: 100%;
+}
+
+.section-resource-list .quick-add__button .add-to-cart-icon {
+  display: none !important;
+}
+
+.section-resource-list .quick-add__button .add-to-cart-text__content {
+  grid-template-columns: 1fr !important;
+}
+
+.section-resource-list .quick-add__button .add-to-cart-text__content span span {
+  opacity: 1 !important;
+  translate: 0 0 !important;
+  filter: none !important;
+  padding-right: 0 !important;
+  font-family: 'Futura', 'Futura PT', sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 14px !important;
+  letter-spacing: 0.03em;
+  color: #fff !important;
+}
+
+/* Show button on card hover */
+.section-resource-list product-card:hover .quick-add__button,
+.section-resource-list product-card:focus-within .quick-add__button {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* ---- HEADER ---- */
+.section-resource-list .section-resource-list__header {
+  padding-bottom: 24px;
+}
+
+.section-resource-list .section-resource-list__header h3,
+.section-resource-list .section-resource-list__header h2 {
+  font-family: 'Futura', 'Futura PT', sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 20px !important;
+  color: #445c1f !important;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 749px) {
+  .section-resource-list .resource-list--grid > .resource-list__item {
+    border-left: none !important;
+    border-bottom: 1px solid rgba(68, 92, 31, 0.12);
+  }
+
+  .section-resource-list .resource-list--grid > .resource-list__item:last-child {
+    border-bottom: none;
+  }
+
+  .section-resource-list .card-gallery .product-media-container {
+    padding: 24px 16px !important;
+  }
+
+  .section-resource-list .quick-add__button {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    height: 48px !important;
+  }
+}

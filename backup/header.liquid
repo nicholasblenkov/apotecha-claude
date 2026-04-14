@@ -1,0 +1,112 @@
+<header class="header" role="banner" data-header>
+  <div class="header__inner">
+    {%- comment -%} Mobile menu button — left {%- endcomment -%}
+    <button class="header__menu-toggle" aria-label="Menu" aria-expanded="false" data-menu-toggle>
+      <svg class="header__icon header__icon--menu" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <line x1="3" y1="7" x2="21" y2="7"/>
+        <line x1="3" y1="17" x2="21" y2="17"/>
+      </svg>
+      <svg class="header__icon header__icon--close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <line x1="5" y1="5" x2="19" y2="19"/>
+        <line x1="19" y1="5" x2="5" y2="19"/>
+      </svg>
+    </button>
+
+    {%- comment -%} Centered logo {%- endcomment -%}
+    <a href="{{ routes.root_url }}" class="header__logo" aria-label="{{ shop.name }}">
+      <img
+        src="{{ 'logo.png' | asset_url }}"
+        alt="{{ shop.name }}"
+        class="header__logo-img"
+        width="200"
+        height="56"
+        loading="eager"
+        fetchpriority="high"
+      >
+    </a>
+
+    {%- comment -%} Cart — right {%- endcomment -%}
+    <a href="{{ routes.cart_url }}" class="header__cart" aria-label="Cart">
+      <svg class="header__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <path d="M16 10a4 4 0 01-8 0"/>
+      </svg>
+      {%- if cart.item_count > 0 -%}
+        <span class="header__cart-count">{{ cart.item_count }}</span>
+      {%- endif -%}
+    </a>
+  </div>
+
+  {%- comment -%} Mobile navigation drawer {%- endcomment -%}
+  <nav class="header__nav" aria-label="Main navigation" data-nav>
+    <ul class="header__nav-list">
+      {%- for link in linklists[section.settings.menu].links -%}
+        <li class="header__nav-item">
+          <a href="{{ link.url }}" class="header__nav-link{% if link.active %} is-active{% endif %}">
+            {{ link.title }}
+          </a>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </nav>
+</header>
+
+<script>
+  (function() {
+    var header = document.querySelector('[data-header]');
+    var toggle = document.querySelector('[data-menu-toggle]');
+    var nav = document.querySelector('[data-nav]');
+    var lastScroll = 0;
+    var headerHeight = header.offsetHeight;
+
+    // Sticky show/hide on scroll
+    document.documentElement.style.setProperty('--header-height', headerHeight + 'px');
+
+    window.addEventListener('scroll', function() {
+      var currentScroll = window.pageYOffset;
+      if (currentScroll <= 0) {
+        header.classList.remove('header--hidden');
+        return;
+      }
+      if (currentScroll > lastScroll && currentScroll > headerHeight) {
+        header.classList.add('header--hidden');
+        // Close mobile nav if open while scrolling away
+        if (header.classList.contains('header--nav-open')) {
+          header.classList.remove('header--nav-open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      } else {
+        header.classList.remove('header--hidden');
+      }
+      lastScroll = currentScroll;
+    }, { passive: true });
+
+    // Mobile menu toggle
+    toggle.addEventListener('click', function() {
+      var isOpen = header.classList.toggle('header--nav-open');
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Update header height on resize
+    window.addEventListener('resize', function() {
+      headerHeight = header.offsetHeight;
+      document.documentElement.style.setProperty('--header-height', headerHeight + 'px');
+    }, { passive: true });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Header",
+  "class": "section-header",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Navigation menu",
+      "default": "main-menu"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,419 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */{
+  "sections": {
+    "main": {
+      "type": "product-information",
+      "blocks": {
+        "media-gallery": {
+          "type": "_product-media-gallery",
+          "static": true,
+          "settings": {
+            "media_presentation": "grid",
+            "media_columns": "one",
+            "image_gap": 4,
+            "large_first_image": false,
+            "icons_style": "none",
+            "slideshow_controls_style": "counter",
+            "slideshow_mobile_controls_style": "dots",
+            "thumbnail_position": "right",
+            "thumbnail_width": 44,
+            "aspect_ratio": "adapt",
+            "constrain_to_viewport": true,
+            "media_fit": "contain",
+            "media_radius": 0,
+            "extend_media": false,
+            "zoom": true,
+            "video_loop": false,
+            "hide_variants": true,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "product-details": {
+          "type": "_product-details",
+          "static": true,
+          "settings": {
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "details_position": "flex-start",
+            "gap": 20,
+            "sticky_details_desktop": true,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 24,
+            "padding-block-end": 24,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "header_group": {
+              "type": "group",
+              "name": "Header",
+              "settings": {
+                "open_in_new_tab": false,
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 8,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "background_media": "none",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "product_title": {
+                  "type": "text",
+                  "name": "Product title",
+                  "settings": {
+                    "text": "<h1>{{ closest.product.title }}</h1>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "h3",
+                    "font": "var(--font-primary--family)",
+                    "font_size": "",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
+                "product_subtitle": {
+                  "type": "text",
+                  "name": "Product subtitle",
+                  "settings": {
+                    "text": "<p>Rice Protein &amp; Green Tea</p>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "paragraph",
+                    "font": "var(--font-primary--family)",
+                    "font_size": "",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "product_title",
+                "product_subtitle"
+              ]
+            },
+            "star_rating": {
+              "type": "review",
+              "settings": {
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "product_price": {
+              "type": "price",
+              "settings": {
+                "show_sale_price_first": true,
+                "show_installments": false,
+                "show_tax_info": false,
+                "type_preset": "paragraph",
+                "width": "100%",
+                "alignment": "left",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "color": "var(--color-foreground)",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "divider_1": {
+              "type": "_divider",
+              "name": "t:names.divider",
+              "settings": {
+                "thickness": 1,
+                "corner_radius": "square",
+                "width_percent": 100,
+                "padding-block-start": 0,
+                "padding-block-end": 0
+              },
+              "blocks": {}
+            },
+            "buy_btns": {
+              "type": "buy-buttons",
+              "settings": {
+                "stacking": true,
+                "show_pickup_availability": false,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "quantity": {
+                  "type": "quantity",
+                  "static": true,
+                  "settings": {},
+                  "blocks": {}
+                },
+                "add-to-cart": {
+                  "type": "add-to-cart",
+                  "static": true,
+                  "settings": {
+                    "style_class": "button"
+                  },
+                  "blocks": {}
+                },
+                "accelerated-checkout": {
+                  "type": "accelerated-checkout",
+                  "static": true,
+                  "settings": {},
+                  "blocks": {}
+                }
+              },
+              "block_order": []
+            },
+            "guarantee": {
+              "type": "text",
+              "name": "Guarantee",
+              "settings": {
+                "text": "<p>Not satisfied? Claim our 30-day Money Back Guarantee</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "paragraph",
+                "font": "var(--font-primary--family)",
+                "font_size": "",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "divider_2": {
+              "type": "_divider",
+              "name": "t:names.divider",
+              "settings": {
+                "thickness": 1,
+                "corner_radius": "square",
+                "width_percent": 100,
+                "padding-block-start": 0,
+                "padding-block-end": 0
+              },
+              "blocks": {}
+            },
+            "benefits": {
+              "type": "text",
+              "name": "Benefits",
+              "settings": {
+                "text": "<ul><li>Formulated with hydrolyzed rice protein for visibly <strong>fuller, stronger hair.</strong></li><li>A nourishing cleanse that supports hair length, density and <strong>natural shine.</strong></li><li>One bar replaces up to <strong>2 bottles</strong> of liquid shampoo.</li><li><strong>Zero</strong> sulfates, silicones, parabens, phthalates and artificial fragrance.</li></ul>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-primary--family)",
+                "font_size": "",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "klarna": {
+              "type": "text",
+              "name": "Klarna",
+              "settings": {
+                "text": "<p>Buy Now, Pay Later &nbsp;&nbsp; KLARNA</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "paragraph",
+                "font": "var(--font-primary--family)",
+                "font_size": "0.75rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "divider_3": {
+              "type": "_divider",
+              "name": "t:names.divider",
+              "settings": {
+                "thickness": 1,
+                "corner_radius": "square",
+                "width_percent": 100,
+                "padding-block-start": 0,
+                "padding-block-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "header_group",
+            "star_rating",
+            "product_price",
+            "divider_1",
+            "buy_btns",
+            "guarantee",
+            "divider_2",
+            "benefits",
+            "klarna",
+            "divider_3"
+          ]
+        }
+      },
+      "settings": {
+        "content_width": "content-center-aligned",
+        "desktop_media_position": "left",
+        "equal_columns": false,
+        "limit_details_width": false,
+        "gap": 48,
+        "color_scheme": "",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "four_reasons": {
+      "type": "custom-liquid",
+      "settings": {
+        "section_width": "page-width",
+        "color_scheme": "scheme-1",
+        "padding-block-start": 80,
+        "padding-block-end": 80,
+        "custom_liquid": "<div class=\"apotecha-reasons\"><h2 class=\"apotecha-reasons__heading\">4 Reasons<br>Why Women Are Switching To Rice Protein</h2><div class=\"apotecha-reasons__content\"><div class=\"apotecha-reasons__image\"></div><div class=\"apotecha-reasons__list\"><div class=\"apotecha-reasons__item\"><span class=\"apotecha-reasons__num\">1</span><h3>Volumne</h3><p>Rice protein is rich in amino acids like cysteine and lysine, which help add body and fullness to fine, limp hair.</p></div><div class=\"apotecha-reasons__item\"><span class=\"apotecha-reasons__num\">2</span><h3>Strength</h3><p>The amino acids in rice protein help build healthy keratin, the protein that's responsible for helping reinforce the hair's cortex.</p></div><div class=\"apotecha-reasons__item\"><span class=\"apotecha-reasons__num\">3</span><h3>Shine</h3><p>The lipids in rice protein help fill rough spots in the hair cuticle, resulting in a smooth, healthy looking shine.</p></div><div class=\"apotecha-reasons__item\"><span class=\"apotecha-reasons__num\">4</span><h3>Balance</h3><p>Rice protein doesn't strip natural oils. Its milder amino acids clean without disrupting the scalp's natural pH balance.</p></div></div></div></div>"
+      }
+    },
+    "comparison": {
+      "type": "custom-liquid",
+      "settings": {
+        "section_width": "page-width",
+        "color_scheme": "",
+        "padding-block-start": 40,
+        "padding-block-end": 80,
+        "custom_liquid": "<div class=\"apotecha-comparison\"><div class=\"apotecha-comparison__left\"><h2>Why Apotecha<br>is the <em>perfect choice</em></h2></div><div class=\"apotecha-comparison__table\"><ul class=\"apotecha-comparison__features\"><li>Hydrolysed rice protein</li><li>Replaces up to 3 bottles</li><li>Zero water formula</li><li>Natural botanical extracts</li><li>Made with natural fragrance</li><li>Vegan &amp; cruelty free</li><li>Zero sulfates, silicones &amp; parabens</li></ul><div class=\"apotecha-comparison__col apotecha-comparison__col--us\"><p class=\"apotecha-comparison__col-title\">Apotecha</p><span class=\"apotecha-check\">\u2713</span><span class=\"apotecha-check\">\u2713</span><span class=\"apotecha-check\">\u2713</span><span class=\"apotecha-check\">\u2713</span><span class=\"apotecha-check\">\u2713</span><span class=\"apotecha-check\">\u2713</span><span class=\"apotecha-check\">\u2713</span></div><div class=\"apotecha-comparison__col apotecha-comparison__col--others\"><p class=\"apotecha-comparison__col-title\">Others</p><span class=\"apotecha-x\">\u2717</span><span class=\"apotecha-x\">\u2717</span><span class=\"apotecha-x\">\u2717</span><span class=\"apotecha-x\">\u2717</span><span class=\"apotecha-x\">\u2717</span><span class=\"apotecha-check\">\u2713</span><span class=\"apotecha-x\">\u2717</span></div></div></div>"
+      }
+    },
+    "faq": {
+      "type": "custom-liquid",
+      "settings": {
+        "section_width": "page-width",
+        "color_scheme": "scheme-1",
+        "padding-block-start": 80,
+        "padding-block-end": 80,
+        "custom_liquid": "<div class=\"apotecha-faq\"><h2>Frequently Asked Questions</h2><div class=\"apotecha-faq__list\"><details class=\"apotecha-faq__item\" name=\"faq\"><summary>How Quickly Will I Notice A Difference?</summary><p>Most customers notice softer, more manageable hair within 2-3 washes.</p></details><details class=\"apotecha-faq__item\" name=\"faq\"><summary>Is It Suitable For My Hair Type?</summary><p>Our shampoo bar works for all hair types \u2014 straight, wavy, curly, and coily.</p></details><details class=\"apotecha-faq__item\" name=\"faq\"><summary>How Do I Use A Shampoo Bar?</summary><p>Wet your hair, rub the bar between your hands to create a lather, then massage into your scalp and hair.</p></details><details class=\"apotecha-faq__item\" name=\"faq\"><summary>How Long Does One Bar Last?</summary><p>One bar typically lasts 60-80 washes, equivalent to 2-3 bottles of liquid shampoo.</p></details><details class=\"apotecha-faq__item\" name=\"faq\"><summary>Will It Work With Colour Treated Hair?</summary><p>Yes. Our sulfate-free formula is gentle on colour-treated hair.</p></details><details class=\"apotecha-faq__item\" name=\"faq\"><summary>Do You Ship Internationally?</summary><p>Yes, we ship worldwide. Delivery times vary by region.</p></details><details class=\"apotecha-faq__item\" name=\"faq\"><summary>Is Rice Protein Right For Everyone?</summary><p>Rice protein is suitable for most hair types. If you have specific allergies, please check the full ingredients list.</p></details><details class=\"apotecha-faq__item\" name=\"faq\"><summary>What If I Don't Love It?</summary><p>We offer a 30-day money back guarantee \u2014 no questions asked.</p></details></div></div>"
+      }
+    },
+    "clean_ingredients": {
+      "type": "custom-liquid",
+      "settings": {
+        "section_width": "page-width",
+        "color_scheme": "scheme-1",
+        "padding-block-start": 60,
+        "padding-block-end": 80,
+        "custom_liquid": "<div class=\"apotecha-ingredients\"><h2 class=\"apotecha-ingredients__tagline\"><em>Clean Hair. Fewer Ingredients.</em></h2><div class=\"apotecha-ingredients__grid\"><div class=\"apotecha-ingredients__item\"><svg class=\"apotecha-ingredients__icon\" viewBox=\"0 0 30 37\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><path d=\"M15 2v33M15 8c-4 0-8-3-12-6M15 8c4 0 8-3 12-6M15 16c-5 0-10-3-13-6M15 16c5 0 10-3 13-6M15 24c-4 0-9-3-12-6M15 24c4 0 9-3 12-6\"/></svg><h3>Amino Acids</h3><p>Packed with rice bran hydrolysed protein for visibly stronger and more resilient hair.</p></div><div class=\"apotecha-ingredients__item\"><svg class=\"apotecha-ingredients__icon\" viewBox=\"0 0 30 37\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><path d=\"M15 37V15M15 15C15 8 8 2 2 2c0 8 6 13 13 13zM15 15c0-7 7-13 13-13 0 8-6 13-13 13z\"/></svg><h3>Botanical Extracts</h3><p>Enriched with green tea, rosemary, and chamomile for a healthier scalp and hair condition.</p></div><div class=\"apotecha-ingredients__item\"><svg class=\"apotecha-ingredients__icon\" viewBox=\"0 0 30 37\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><circle cx=\"15\" cy=\"18\" r=\"13\"/><path d=\"M10 13l5 5-5 5M20 13l-5 5 5 5\"/></svg><h3>Zero Waste</h3><p>Zero plastic packaging \u2014 one bar replaces up to 3 bottles of liquid shampoo.</p></div></div></div>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "four_reasons",
+    "comparison",
+    "faq",
+    "clean_ingredients"
+  ]
+}

@@ -1,0 +1,32 @@
+{% assign bundle = all_products['fresh-bundle'] %}
+{% if bundle %}
+  {% assign bv = bundle.selected_or_first_available_variant %}
+  {% assign items = 'shampoo-bar,conditioner-bar,body-scrub-soap-bar' | split: ',' %}
+  <div class="apotecha-bundle">
+    <p class="apotecha-bundle__title">The Set:</p>
+    <div class="apotecha-bundle__items">
+      {% for handle in items %}
+        {% assign bp = all_products[handle] %}
+        {% if bp %}
+          <div class="apotecha-bundle__thumb">
+            {{ bp.featured_image | image_url: width: 160 | image_tag: loading: 'lazy', alt: bp.title, width: 80, height: 80 }}
+          </div>
+          {% if forloop.index == 2 %}
+            <span class="apotecha-bundle__plus">+</span>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </div>
+    <p class="apotecha-bundle__total">Total: {{ bv.price | money }}</p>
+    <form method="post" action="/cart/add" enctype="multipart/form-data">
+      <input type="hidden" name="id" value="{{ bv.id }}">
+      <input type="hidden" name="quantity" value="1">
+      <button class="apotecha-bundle__atc" type="submit">ADD TO CART</button>
+    </form>
+    <ul class="apotecha-bundle__list">
+      <li>1x Rice Protein Shampoo Bar</li>
+      <li>1x Conditioner</li>
+      <li>1x Sandalwood Scrub Body Soap</li>
+    </ul>
+  </div>
+{% endif %}

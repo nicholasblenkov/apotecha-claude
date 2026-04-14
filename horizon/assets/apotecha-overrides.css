@@ -1,0 +1,493 @@
+/* ==========================================================================
+   Apotecha — Horizon Theme Overrides
+   ========================================================================== */
+
+/* --- Font Overrides --- */
+
+:root {
+  --font-body--family: 'Futura', sans-serif;
+  --font-subheading--family: 'Futura', sans-serif;
+  --font-heading--family: 'Futura', sans-serif;
+  --font-accent--family: 'Futura', sans-serif;
+}
+
+/* --- Product Hero: 60/40 Split --- */
+
+@media screen and (min-width: 1200px) {
+  .product-information--media-left .product-information__grid {
+    grid-template-columns: 3fr 2fr;
+  }
+  .product-information--media-right .product-information__grid {
+    grid-template-columns: 2fr 3fr;
+  }
+}
+
+/* --- Guarantee Badge --- */
+
+.apotecha-guarantee {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(65, 93, 25, 0.21);
+  padding: 12px 16px;
+  margin-top: 8px;
+}
+
+.apotecha-guarantee__circle {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 50%;
+  border: 1.5px solid #445c1f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.1;
+  color: #445c1f;
+}
+
+.apotecha-guarantee p {
+  font-size: 16px;
+  font-weight: 300;
+  margin: 0;
+  color: #445c1f;
+}
+
+/* --- Benefits List --- */
+
+.apotecha-benefits {
+  list-style: disc;
+  padding-left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+}
+
+.apotecha-benefits li {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.4;
+  color: #445c1f;
+}
+
+.apotecha-benefits li strong {
+  font-weight: 700;
+}
+
+/* --- Klarna Notice --- */
+
+.apotecha-klarna {
+  font-size: 12px;
+  font-weight: 300;
+  color: #445c1f;
+  margin: 0;
+}
+
+/* --- Bundle / The Set --- */
+
+.apotecha-bundle {
+  background: #c6cfbb;
+  padding: 24px;
+  margin-top: 16px;
+}
+
+.apotecha-bundle__title {
+  font-weight: 500;
+  font-size: 15px;
+  margin: 0 0 16px;
+  color: #445c1f;
+}
+
+.apotecha-bundle__items {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.apotecha-bundle__thumb {
+  width: 80px;
+  height: 80px;
+  border: 1px solid #445c1f;
+  background: #e9ede6;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.apotecha-bundle__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.apotecha-bundle__plus {
+  font-size: 18px;
+  font-weight: 300;
+  color: #445c1f;
+  padding: 0 2px;
+}
+
+.apotecha-bundle__total {
+  font-weight: 400;
+  font-size: 15px;
+  margin: 0 0 12px;
+  color: #445c1f;
+}
+
+.apotecha-bundle__atc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000000;
+  color: #e9ede6;
+  font-family: 'Futura', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 14px 32px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  max-width: 280px;
+}
+
+.apotecha-bundle__atc:hover {
+  opacity: 0.85;
+}
+
+.apotecha-bundle__list {
+  list-style: none;
+  padding: 0;
+  margin: 14px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.apotecha-bundle__list li {
+  font-size: 13px;
+  font-weight: 300;
+  color: #445c1f;
+}
+
+/* ==========================================================================
+   4 Reasons Section
+   ========================================================================== */
+
+.apotecha-reasons__heading {
+  text-align: center;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 1.15;
+  margin-bottom: 60px;
+  text-transform: capitalize;
+  color: #445c1f;
+}
+
+.apotecha-reasons__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: start;
+}
+
+.apotecha-reasons__image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: linear-gradient(180deg, #587c25 0%, #2a3e0d 100%);
+  border-radius: 0;
+}
+
+.apotecha-reasons__list {
+  padding: 40px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.apotecha-reasons__num {
+  font-weight: 500;
+  font-size: 24px;
+  color: #445c1f;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.apotecha-reasons__item h3 {
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1;
+  font-style: italic;
+  margin: 0 0 12px;
+  color: #445c1f;
+}
+
+.apotecha-reasons__item p {
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.5;
+  max-width: 345px;
+  color: #445c1f;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .apotecha-reasons__content {
+    grid-template-columns: 1fr;
+  }
+  .apotecha-reasons__list {
+    padding: 32px 0;
+  }
+}
+
+/* ==========================================================================
+   Comparison Section
+   ========================================================================== */
+
+.apotecha-comparison {
+  background: linear-gradient(135deg, #e9ede6 0%, #75a68a 100%);
+  border-radius: 7px;
+  padding: 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.apotecha-comparison__left h2 {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 1.15;
+  color: #445c1f;
+  margin: 0;
+}
+
+.apotecha-comparison__left h2 em {
+  font-style: normal;
+  font-weight: 700;
+}
+
+.apotecha-comparison__table {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 0;
+  align-items: start;
+}
+
+.apotecha-comparison__features {
+  background: #c6cfbb;
+  border-radius: 24px;
+  padding: 48px 20px 24px;
+  list-style: none;
+  margin: 0;
+}
+
+.apotecha-comparison__features li {
+  font-size: 13px;
+  font-weight: 400;
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(68, 92, 31, 0.15);
+  color: #445c1f;
+}
+
+.apotecha-comparison__features li:last-child {
+  border-bottom: none;
+}
+
+.apotecha-comparison__col {
+  padding: 16px 20px;
+  text-align: center;
+  border-radius: 24px;
+  min-width: 80px;
+}
+
+.apotecha-comparison__col--us {
+  background: linear-gradient(180deg, #587c25 0%, #2a3e0d 100%);
+  color: #e9ede6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.apotecha-comparison__col--others {
+  border: 1px solid #445c1f;
+  color: #445c1f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.apotecha-comparison__col-title {
+  font-weight: 500;
+  font-size: 13px;
+  margin: 0 0 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid currentColor;
+  width: 100%;
+  text-align: center;
+}
+
+.apotecha-check,
+.apotecha-x {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 0;
+  font-size: 16px;
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.apotecha-comparison__col--others .apotecha-check,
+.apotecha-comparison__col--others .apotecha-x {
+  border-bottom-color: rgba(68, 92, 31, 0.15);
+}
+
+.apotecha-check:last-child,
+.apotecha-x:last-child {
+  border-bottom: none;
+}
+
+@media (max-width: 900px) {
+  .apotecha-comparison {
+    grid-template-columns: 1fr;
+    padding: 32px 20px;
+  }
+}
+
+/* ==========================================================================
+   FAQ Section
+   ========================================================================== */
+
+.apotecha-faq h2 {
+  font-weight: 500;
+  font-size: 32px;
+  text-align: center;
+  margin: 0 0 40px;
+  color: #445c1f;
+}
+
+.apotecha-faq__list {
+  max-width: 1068px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.apotecha-faq__item {
+  border: 1px solid #445c1f;
+}
+
+.apotecha-faq__item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 27px;
+  font-family: 'Futura', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #445c1f;
+  cursor: pointer;
+  list-style: none;
+}
+
+.apotecha-faq__item summary::-webkit-details-marker {
+  display: none;
+}
+
+.apotecha-faq__item summary::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #445c1f;
+  border-bottom: 2px solid #445c1f;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  margin-left: 16px;
+}
+
+.apotecha-faq__item[open] summary::after {
+  transform: rotate(-135deg);
+}
+
+.apotecha-faq__item p {
+  padding: 0 27px 16px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #445c1f;
+  margin: 0;
+}
+
+/* ==========================================================================
+   Clean Ingredients Section
+   ========================================================================== */
+
+.apotecha-ingredients {
+  text-align: center;
+}
+
+.apotecha-ingredients__tagline {
+  font-weight: 500;
+  font-size: 32px;
+  font-style: italic;
+  margin: 0 0 60px;
+  color: #445c1f;
+}
+
+.apotecha-ingredients__tagline em {
+  font-style: italic;
+}
+
+.apotecha-ingredients__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 33px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.apotecha-ingredients__item {
+  text-align: center;
+}
+
+.apotecha-ingredients__icon {
+  width: 30px;
+  height: 37px;
+  margin: 0 auto 10px;
+  color: #445c1f;
+  display: block;
+}
+
+.apotecha-ingredients__item h3 {
+  font-weight: 700;
+  font-size: 16px;
+  margin: 0 0 8px;
+  color: #445c1f;
+}
+
+.apotecha-ingredients__item p {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.4;
+  max-width: 240px;
+  margin: 0 auto;
+  color: #445c1f;
+}
+
+@media (max-width: 750px) {
+  .apotecha-ingredients__grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}

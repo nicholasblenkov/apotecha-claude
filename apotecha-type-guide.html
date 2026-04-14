@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apotecha — Type Hierarchy</title>
+<style>
+  @font-face {
+    font-family: 'Futura PT';
+    src: url('futura-pt/FuturaCyrillicLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Futura PT';
+    src: url('futura-pt/FuturaCyrillicBook.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Futura PT';
+    src: url('futura-pt/FuturaCyrillicMedium.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Futura PT';
+    src: url('futura-pt/FuturaCyrillicDemi.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Futura PT';
+    src: url('futura-pt/FuturaCyrillicBold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Futura PT';
+    src: url('futura-pt/FuturaCyrillicExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Futura PT';
+    src: url('futura-pt/FuturaCyrillicHeavy.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #e9ede6;
+    color: #445c1f;
+    font-family: 'Futura PT', sans-serif;
+    padding: 60px 80px;
+  }
+
+  .header {
+    margin-bottom: 60px;
+    padding-bottom: 40px;
+    border-bottom: 0.5px solid #445c1f;
+  }
+
+  .header h1 {
+    font-weight: 300;
+    font-size: 24px;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+    color: #445c1f;
+  }
+
+  .header p {
+    font-weight: 300;
+    font-size: 12px;
+    color: #445c1f;
+    opacity: 0.5;
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 40px;
+    align-items: baseline;
+    padding: 32px 0;
+    border-bottom: 0.5px solid rgba(68,92,31,0.15);
+  }
+
+  .meta {
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #445c1f;
+    opacity: 0.5;
+  }
+
+  .meta strong {
+    display: block;
+    font-weight: 500;
+    font-size: 12px;
+    opacity: 1;
+    color: #445c1f;
+    margin-bottom: 4px;
+  }
+
+  /* --- Type Styles --- */
+
+  .t-product-title {
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 0.8;
+    text-transform: capitalize;
+    color: #445c1f;
+  }
+
+  .t-product-subtitle {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.37;
+    color: #445c1f;
+  }
+
+  .t-category {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.37;
+    color: #445c1f;
+  }
+
+  .t-price {
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 0.8;
+    text-transform: capitalize;
+    color: #445c1f;
+  }
+
+  .t-button-primary {
+    display: inline-block;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 0.8;
+    color: #e9ede6;
+    background: #445c1f;
+    padding: 14px 40px;
+  }
+
+  .t-button-outline {
+    display: inline-block;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 0.8;
+    color: #445c1f;
+    border: 0.5px solid #445c1f;
+    padding: 8px 32px;
+    background: transparent;
+  }
+
+  .t-body {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.37;
+    color: #445c1f;
+  }
+
+  .t-detail-label {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.37;
+    color: #445c1f;
+  }
+
+  .t-detail-body {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 0.8;
+    color: #445c1f;
+  }
+
+  .t-section-title {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.37;
+    color: #445c1f;
+  }
+
+  .t-bundle-list {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 1.37;
+    color: #445c1f;
+  }
+
+  .t-star-count {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.37;
+    color: #445c1f;
+  }
+
+  .t-klarna {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 0.8;
+    color: #445c1f;
+  }
+
+  /* --- Weights reference --- */
+
+  .weights {
+    display: flex;
+    gap: 48px;
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 0.5px solid #445c1f;
+  }
+
+  .weight-item {
+    font-size: 32px;
+    line-height: 1;
+    color: #445c1f;
+  }
+
+  .weight-label {
+    font-size: 11px;
+    font-weight: 400;
+    color: #445c1f;
+    opacity: 0.5;
+    margin-top: 8px;
+  }
+
+  /* --- Color swatches --- */
+
+  .colors {
+    display: flex;
+    gap: 24px;
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 0.5px solid #445c1f;
+  }
+
+  .swatch { text-align: center; }
+
+  .swatch-box {
+    width: 80px;
+    height: 80px;
+    border: 0.5px solid #445c1f;
+    margin-bottom: 8px;
+  }
+
+  .swatch-label {
+    font-size: 11px;
+    font-weight: 400;
+    color: #445c1f;
+    opacity: 0.5;
+  }
+
+  .swatch-hex {
+    font-size: 11px;
+    font-weight: 300;
+    color: #445c1f;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Apotecha</h1>
+  <p>Font Hierarchy &amp; Type System — Futura PT</p>
+</div>
+
+<div class="row">
+  <div class="meta">
+    <strong>Product Title</strong>
+    Futura PT Book<br>32px / 0.8 leading<br>Weight: 300<br>Capitalize
+  </div>
+  <div class="t-product-title">Rice Protein<br>Shampoo Bar</div>
+</div>
+
+<div class="row">
+  <div class="meta">
+    <strong>Product Subtitle</strong>
+    Futura PT Medium<br>16px / 1.37 leading<br>Weight: 400
+  </div>
+  <div class="t-product-subtitle">Green Tea &amp; Bergamot</div>
+</div>
+
+<div class="row">
+  <div class="meta">
+    <strong>Category Label</strong>
+    Futura PT Medium<br>12px / 1.37 leading<br>Weight: 400
+  </div>
+  <div class="t-category">Hair — Shampoo</div>
+</div>
+
+<div class="row">
+  <div class="meta">
+    <strong>Price</strong>
+    Futura PT Book<br>20px / 0.8 leading<br>Weight: 300<br>Capitalize
+  </div>
+  <div class="t-price">DKK 169.00</div>
+</div>
+
+<div class="row">
+  <div class="meta">
+    <strong>Button — Primary</strong>
+    Futura PT Book<br>16px / 0.8 leading<br>Weight: 300<br>BG: #445C1F<br>Text: #E9EDE6
+  </div>
+  <div class="t-button-primary">Add to cart</div>
+</div>
+
+<div class="row">
+  <div class="meta">
+    <strong>Button — Outline</strong>
+    Futura PT Book<br>12px / 0.8 leading<br>Weight: 300<br>Border: 0.5px #445C1F
+  </div>
+  <div class="t-button-outline">Read More</div>
+</div>
+
+<div class="row">
+  <div class="meta">
+    <strong>Body Text</strong>
+    Futura PT Book<br>14px / 1.37 leading<br>Weight: 300
+  </div>
+  <div class="t-body">Solid shampoo formulated with hydrolyzed rice protein. Naturally rich in amino acids and vitamin E, helping build a fuller, stronger hair with every wash.</div>
+</div>
+
+<div class="row">
+  <div class="meta">
+    <strong>Detail Label</strong>
+    Futura PT Medium<br>12px / 1.37 leading<br>Weight: 400
+  </div>
+  <div class="t-detail-label">Active ingredients</div>
+</div>
+
+<div class="row">
+  <div class="meta">
+    <strong>Detail Body</strong>
+    Futura PT Book<br>12px / 0.8 leading<br>Weight: 300
+  </div>
+  <div class="t-detail-body">Formulated with hydrolyzed rice protein for visibly fuller, stronger hair.</div>
+</div>
+
+<div class="row">
+  <div class="meta">
+    <strong>Section Title</strong>
+    Futura PT Medium<br>16px / 1.37 leading<br>Weight: 400
+  </div>
+  <div class="t-section-title">The Apotecha Set</div>
+</div>
+
+<div class="row">
+  <div class="meta">
+    <strong>Bundle / List Item</strong>
+    Futura PT Book<br>12px / 1.37 leading<br>Weight: 300
+  </div>
+  <div class="t-bundle-list">Rice Protein Shampoo &amp; Conditioner<br>+ Body Scrub Soap</div>
+</div>
+
+<div class="row">
+  <div class="meta">
+    <strong>Star Count</strong>
+    Futura PT Book<br>14px / 1.37 leading<br>Weight: 300
+  </div>
+  <div class="t-star-count">(203+)</div>
+</div>
+
+<div class="row">
+  <div class="meta">
+    <strong>Klarna / Small Label</strong>
+    Futura PT Book<br>12px / 0.8 leading<br>Weight: 300
+  </div>
+  <div class="t-klarna">Buy Now, Pay Later&nbsp;&nbsp;&nbsp;&nbsp;KLARNA</div>
+</div>
+
+<div class="weights">
+  <div>
+    <div class="weight-item" style="font-weight:200;">Aa</div>
+    <div class="weight-label">Light — 200</div>
+  </div>
+  <div>
+    <div class="weight-item" style="font-weight:300;">Aa</div>
+    <div class="weight-label">Book — 300</div>
+  </div>
+  <div>
+    <div class="weight-item" style="font-weight:400;">Aa</div>
+    <div class="weight-label">Medium — 400</div>
+  </div>
+  <div>
+    <div class="weight-item" style="font-weight:500;">Aa</div>
+    <div class="weight-label">Demi — 500</div>
+  </div>
+  <div>
+    <div class="weight-item" style="font-weight:700;">Aa</div>
+    <div class="weight-label">Bold — 700</div>
+  </div>
+  <div>
+    <div class="weight-item" style="font-weight:800;">Aa</div>
+    <div class="weight-label">ExtraBold — 800</div>
+  </div>
+  <div>
+    <div class="weight-item" style="font-weight:900;">Aa</div>
+    <div class="weight-label">Heavy — 900</div>
+  </div>
+</div>
+
+<div class="colors">
+  <div class="swatch">
+    <div class="swatch-box" style="background:#445c1f;"></div>
+    <div class="swatch-label">Primary</div>
+    <div class="swatch-hex">#445C1F</div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-box" style="background:#e9ede6;"></div>
+    <div class="swatch-label">Background</div>
+    <div class="swatch-hex">#E9EDE6</div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-box" style="background:rgba(65,93,25,0.2);"></div>
+    <div class="swatch-label">Muted Green</div>
+    <div class="swatch-hex">#415D19 / 20%</div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-box" style="background:#587c25;"></div>
+    <div class="swatch-label">Green Light</div>
+    <div class="swatch-hex">#587C25</div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-box" style="background:#2a3e0d;"></div>
+    <div class="swatch-label">Green Dark</div>
+    <div class="swatch-hex">#2A3E0D</div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-box" style="background:#000000;"></div>
+    <div class="swatch-label">CTA Dark</div>
+    <div class="swatch-hex">#000000</div>
+  </div>
+</div>
+
+</body>
+</html>
