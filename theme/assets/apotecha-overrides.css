@@ -782,54 +782,98 @@ button#checkout:hover {
    PDP — Complete Layout Overrides (Figma match)
    ========================================================================== */
 
-/* Product details column — CSS Grid with 2 columns for price+quantity row */
+/* Product details column */
 .product-information .product-details {
-  display: grid !important;
-  grid-template-columns: auto 1fr !important;
   gap: 0 !important;
-}
-
-/* All blocks span full width by default */
-.product-information .product-details > * {
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
-  grid-column: 1 / -1 !important;
-}
-
-/* Price block (5th child): left column only, align self to center */
-.product-information .product-details > :nth-child(5) {
-  grid-column: 2 / 3 !important;
-  grid-row: 6 !important;
   align-self: start !important;
-  justify-self: end !important;
-  margin-bottom: 0 !important;
+}
+
+/* Override the group block gap — use a small base, fine-tune per block */
+.product-information .product-details .group-block,
+.product-information .product-details .group-block-content,
+.product-information .product-details .group-block-content.layout-panel-flex {
+  gap: 0 !important;
+  --gap: 0px !important;
+}
+
+/* ---- PDP block spacing (using unique class selectors) ---- */
+.product-information .view-product-title {
+  display: none !important;
+}
+
+/* Title → subtitle spacing inside header group */
+.product-details .group-block .group-block .group-block-content {
+  gap: 10px !important;
+  --gap: 10px !important;
+}
+
+/* Header group: more space after title block */
+.product-details > .group-block > .group-block-content > .group-block {
+  margin-bottom: 20px !important;
+}
+
+/* Description block */
+.product-information .apotecha-pdp-body {
+  margin-bottom: 20px !important;
+}
+
+/* Buy buttons block */
+.product-information .buy-buttons-block {
+  margin-bottom: 6px !important;
+  padding: 0 !important;
+}
+
+/* USP details — space above */
+.product-information .apotecha-pdp-details {
+  margin-top: 16px !important;
   padding-top: 0 !important;
 }
 
-/* Buy buttons block (6th child): sits in left column, same row as price */
-.product-information .product-details > :nth-child(6) {
-  grid-column: 1 / 2 !important;
-  grid-row: 6 !important;
+/* Bundle — space above */
+.product-information .apotecha-pdp-bundle {
+  margin-top: 28px !important;
+}
+
+/* Sticky right panel: stick to top, no internal scroll */
+@media screen and (min-width: 750px) {
+  .product-information .product-details.sticky-content--desktop {
+    position: sticky !important;
+    top: var(--sticky-header-offset, 0) !important;
+    overflow: visible !important;
+  }
 }
 
 /* ----------------------------------------------------------------
-   Price + Quantity on same row:
-   Make the buy-buttons block (6th child) the positioning context.
-   Float the price block (5th child) into the quantity row using
-   negative margin to collapse it into the buy-buttons space.
+   Price + Quantity on same row (Figma layout):
+   Price uses negative margin to overlap into the buy-buttons row.
+   Price right-aligned, quantity left-aligned — same visual line.
    ---------------------------------------------------------------- */
 
-/* Price block: remove from flow, sit on same line as quantity */
-.product-information .product-details > :nth-child(5) {
-  position: absolute !important;
-  right: 0 !important;
-  margin-bottom: 0 !important;
+/* Price block: right-align, pull down into the quantity row */
+.product-information .product-details product-price {
+  text-align: right !important;
+  width: 100% !important;
+  margin-bottom: -36px !important; /* overlap into quantity selector row */
+  position: relative !important;
   z-index: 10 !important;
-  /* Align vertically with quantity selector top */
+  font-size: 20px !important;
+  line-height: 36px !important;
 }
 
-/* Buy buttons block: needs relative positioning as anchor */
-.product-information .product-details > :nth-child(6) {
+/* Remove underline from price text */
+.product-information .product-details product-price,
+.product-information .product-details product-price *,
+.product-information .product-details product-price .price,
+.product-information .product-details product-price .money {
+  text-decoration: none !important;
+  font-size: 20px !important;
+  font-weight: 400 !important;
+  color: #445c1f !important;
+  text-transform: uppercase !important;
+}
+
+/* Buy buttons block */
+.product-information .buy-buttons-block {
   position: relative !important;
 }
 
@@ -856,59 +900,36 @@ button#checkout:hover {
   margin-bottom: 15px !important;
 }
 
-/* Category label: 40px gap below to title */
-.product-information .product-details > [data-block-id="category_label"] {
-  margin-bottom: 40px !important;
-}
+/* (spacing handled via nth-child on .group-block-content above) */
 
-/* Title group (title + subtitle): 10px internal, 25px after */
-.product-information .product-details .group-block,
-.product-information .product-details [data-block-id="header_group"] {
-  margin-bottom: 25px !important;
-}
+/* (header group internal gap moved to PDP block spacing section above) */
 
-/* Description: 50px gap below to quantity/ATC */
-.product-information .product-details > [data-block-id="description"] {
-  margin-bottom: 50px !important;
+/* Buy buttons internals: collapse extra spacing */
+.product-information .buy-buttons,
+.product-information .buy-buttons > * {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
 }
-
-/* Buy buttons (quantity + ATC): 15px gap below */
-.product-information .product-details > [data-block-id="buy_btns"],
-.product-information .buy-buttons {
-  margin-bottom: 15px !important;
+.product-information [data-block-id="buy_btns"] {
+  padding: 0 !important;
 }
-
-/* Klarna: 20px gap below to info rows */
-.product-information .product-details > [data-block-id="klarna"] {
-  margin-bottom: 20px !important;
-}
-
-/* Info rows: 30px gap below to bundle */
-.product-information .product-details > [data-block-id="product_details"] {
-  margin-bottom: 30px !important;
+.product-information [data-block-id="buy_btns"] > * {
+  padding: 0 !important;
 }
 
 /* Spacing per block — using grid rows now */
 /* Block order: 1=stars, 2=category, 3=header, 4=description, 5=price(shared row), 6=buy(shared row), 7=klarna, 8=details, 9=bundle */
-.product-information .product-details > :nth-child(1) { margin-bottom: 15px !important; }  /* stars */
-.product-information .product-details > :nth-child(2) { margin-bottom: 40px !important; }  /* category */
-.product-information .product-details > :nth-child(3) { margin-bottom: 25px !important; }  /* title group */
-.product-information .product-details > :nth-child(4) { margin-bottom: 30px !important; }  /* description */
-.product-information .product-details > :nth-child(5) { margin-bottom: 0 !important; }     /* price — same row as buy */
-.product-information .product-details > :nth-child(6) { margin-bottom: 15px !important; }  /* buy buttons */
-.product-information .product-details > :nth-child(7) { margin-bottom: 20px !important; grid-column: 1 / -1 !important; }  /* klarna */
-.product-information .product-details > :nth-child(8) { margin-bottom: 30px !important; grid-column: 1 / -1 !important; }  /* info rows */
-.product-information .product-details > :nth-child(9) { margin-bottom: 0 !important; grid-column: 1 / -1 !important; }     /* bundle */
+/* (nth-child selectors moved to .group-block-content above) */
 
 /* Space between quantity row and ATC button */
 .product-information .buy-buttons__group {
-  gap: 20px !important;
-  margin-bottom: 15px !important;
+  gap: 12px !important;
+  margin-bottom: 0 !important;
 }
 
 /* Space between ATC and the next elements */
 .product-information .buy-buttons__ctas {
-  margin-top: 15px !important;
+  margin-top: 8px !important;
 }
 
 /* Hide accelerated checkout (PayPal, ShopPay, "More payment options") on PDP */
@@ -945,12 +966,14 @@ button#checkout:hover {
    Horizon renders: .product-form-buttons > quantity-selector-component + add-to-cart-component + accelerated-checkout
    ========================================================================== */
 
-/* The form buttons container: stack vertically */
+/* The form buttons container: stack vertically, tight spacing */
 .product-information .product-form-buttons {
   display: flex !important;
   flex-direction: column !important;
-  gap: 15px !important;
+  gap: 10px !important;
   width: 100% !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
 }
 
 /* Unstacked mode puts them in a row — override that */
@@ -1970,10 +1993,25 @@ button#checkout:hover {
 }
 
 /* ==========================================================================
-   Product Grid — Aesop-Inspired Layout
+   Product Grid — Aesop-Style Full-Width Layout
+   ==========================================================================
+   DOM structure (for selector reference):
+   .section-resource-list
+     .resource-list--grid                        ← CSS grid
+       .resource-list__item                      ← grid cell
+         product-card.product-card               ← custom element
+           .product-card__content                ← flex column (POSITIONED PARENT)
+             .card-gallery                       ← image wrapper (STATIC — not a containing block)
+               a.contents                        ← display:contents, transparent
+                 slideshow-component             ← aspect-ratio holder
+                   slideshow-container > slideshow-slides > slideshow-slide
+                     .product-media-container > img
+               quick-add-component.quick-add     ← ATC button (abs. to product-card__content)
+             product-title                       ← title block
+             [price block]                       ← price block
    ========================================================================== */
 
-/* Grid: zero gaps, dividers via borders */
+/* ---------- 1. GRID ---------- */
 .section-resource-list .resource-list--grid {
   --resource-list-column-gap-desktop: 0px !important;
   --resource-list-row-gap-desktop: 0px !important;
@@ -1981,92 +2019,108 @@ button#checkout:hover {
   --resource-list-row-gap: 0px !important;
   column-gap: 0 !important;
   row-gap: 0 !important;
-  border-top: 1px solid rgba(68, 92, 31, 0.12);
-  border-bottom: 1px solid rgba(68, 92, 31, 0.12);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-/* Vertical divider between cards */
+/* Thin vertical dividers between columns */
 .section-resource-list .resource-list--grid > .resource-list__item {
-  border-left: 1px solid rgba(68, 92, 31, 0.12);
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
 }
-
 .section-resource-list .resource-list--grid > .resource-list__item:first-child {
   border-left: none;
 }
 
-/* Card content: centered column, no extra gaps */
+/* ---------- 2. CARD ---------- */
+/* This is the positioned parent for the quick-add overlay */
 .section-resource-list .product-card__content {
+  position: relative !important;
+  overflow: hidden !important;
   align-items: center !important;
   text-align: center;
   gap: 0 !important;
   --product-card-gap: 0px !important;
   padding: 0 !important;
-  position: relative;
-  overflow: hidden;
 }
 
-/* ---- IMAGE AREA ---- */
-/* Card gallery: warm beige bg, forced tall aspect ratio */
+/* ---------- 3. IMAGE AREA ---------- */
+/* Card gallery: warm beige bg, NOT position:relative so quick-add
+   escapes to .product-card__content as its containing block. */
 .section-resource-list .card-gallery {
+  position: static !important;
   background-color: #f0ece4 !important;
-  aspect-ratio: 4 / 5 !important;
   width: 100% !important;
+  overflow: hidden !important;
+  /* Reset any padding-bottom trick from before */
+  height: auto !important;
+  padding: 0 !important;
 }
 
-/* Slideshow chain: fill the card-gallery completely */
+/* Force a consistent aspect ratio on the slideshow itself */
 .section-resource-list .card-gallery slideshow-component {
-  height: 100% !important;
+  display: block !important;
   width: 100% !important;
+  aspect-ratio: 4 / 3 !important;
+  overflow: hidden !important;
+  position: relative !important;
 }
 
 .section-resource-list .card-gallery slideshow-container {
-  height: 100% !important;
   width: 100% !important;
+  height: 100% !important;
+  position: absolute !important;
+  inset: 0 !important;
 }
 
 .section-resource-list .card-gallery slideshow-slides {
-  height: 100% !important;
   width: 100% !important;
+  height: 100% !important;
   min-height: 0 !important;
 }
 
 .section-resource-list .card-gallery slideshow-slide {
-  height: 100% !important;
   width: 100% !important;
+  height: 100% !important;
 }
 
-/* Media container: fill the slide, use contain so product floats on beige bg */
+/* Media container: fill the slide */
 .section-resource-list .card-gallery .product-media-container {
   width: 100% !important;
   height: 100% !important;
   aspect-ratio: unset !important;
   max-height: none !important;
-  padding: 32px 24px !important;
-  box-sizing: border-box !important;
+  padding: 0 !important;
 }
 
+/* Product image: contain within beige area, subtle padding for breathing room */
 .section-resource-list .card-gallery .product-media-container img {
   object-fit: contain !important;
   width: 100% !important;
   height: 100% !important;
   aspect-ratio: unset !important;
-  mix-blend-mode: multiply;
+  padding: 24px !important;
+  box-sizing: border-box !important;
 }
 
-/* Placeholder SVGs (for products without images) */
+/* Placeholder SVGs */
 .section-resource-list .card-gallery svg {
   width: 100% !important;
   height: 100% !important;
   aspect-ratio: unset !important;
 }
 
-/* ---- TEXT AREA ---- */
-/* Product title: centered, Futura Demi */
+/* Hide slideshow arrows & badges on grid cards */
+.section-resource-list .card-gallery slideshow-arrows,
+.section-resource-list .card-gallery .product-badges {
+  display: none !important;
+}
+
+/* ---------- 4. TEXT AREA ---------- */
 .section-resource-list product-card product-title,
 .section-resource-list product-card [class*="product-title"] {
   width: 100% !important;
   text-align: center !important;
-  padding: 20px 16px 4px !important;
+  padding: 20px 20px 2px !important;
 }
 
 .section-resource-list product-card product-title a,
@@ -2074,69 +2128,102 @@ button#checkout:hover {
   font-family: 'Futura', 'Futura PT', sans-serif !important;
   font-weight: 500 !important;
   font-size: 15px !important;
-  line-height: 1.3 !important;
+  line-height: 1.35 !important;
   color: #1a1a1a !important;
-  text-decoration: none;
+  text-decoration: none !important;
   letter-spacing: 0.01em;
 }
 
-/* Price: centered, lighter weight */
 .section-resource-list product-card [class*="price"] {
   width: 100% !important;
   text-align: center !important;
   justify-content: center !important;
-  padding: 4px 16px 24px !important;
+  padding: 4px 20px 28px !important;
   font-size: 13px !important;
   font-weight: 400 !important;
-  color: #555 !important;
-  line-height: 1.4 !important;
+  color: #666 !important;
+  line-height: 1.5 !important;
 }
 
 .section-resource-list product-card .price-item,
 .section-resource-list product-card .money {
   font-size: 13px !important;
   font-weight: 400 !important;
-  color: #555 !important;
+  color: #666 !important;
   text-transform: none !important;
 }
 
-/* ---- QUICK ADD: full-width dark bar, slides up on hover ---- */
+/* ---------- 5. QUICK ADD — full-width charcoal bar at card bottom ---------- */
+/* Because card-gallery is position:static, the quick-add (position:absolute)
+   anchors to .product-card__content instead. This places it at the
+   bottom of the entire card, overlaying the text area — matching Aesop. */
 .section-resource-list .quick-add {
   position: absolute !important;
-  inset: auto 0 0 0 !important;
-  z-index: 10;
-  pointer-events: none;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  top: auto !important;
+  z-index: 20 !important;
+  pointer-events: none !important;
+  height: auto !important;
+  width: 100% !important;
+}
+
+.section-resource-list .quick-add .quick-add__product-form-component {
+  height: auto !important;
 }
 
 .section-resource-list .quick-add .shopify-product-form {
-  justify-content: stretch !important;
-  align-items: flex-end !important;
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  container-type: normal !important;
 }
 
+/* Only one button visible depending on variant count */
+.section-resource-list [data-quick-add-button='choose'] add-to-cart-component {
+  display: none !important;
+}
+.section-resource-list [data-quick-add-button='add'] .quick-add__button--choose {
+  display: none !important;
+}
+
+/* The button itself */
 .section-resource-list .quick-add__button {
   position: relative !important;
   right: auto !important;
   bottom: auto !important;
+  left: auto !important;
   width: 100% !important;
+  max-width: 100% !important;
+  height: 52px !important;
+  min-height: 52px !important;
   border-radius: 0 !important;
   border: none !important;
-  background: #3d3d3d !important;
+  background: #333 !important;
   color: #fff !important;
-  height: 52px !important;
-  opacity: 0;
+  opacity: 0 !important;
   transform: translateY(100%);
-  transition: opacity 0.3s ease, transform 0.3s ease !important;
+  transition: opacity 0.25s ease, transform 0.25s ease !important;
   pointer-events: all;
   backdrop-filter: none !important;
-  padding: 0 24px !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
+/* Button inner text */
 .section-resource-list .quick-add__button .add-to-cart-text {
   background: transparent !important;
   color: #fff !important;
   border-radius: 0 !important;
   justify-content: center !important;
-  width: 100%;
+  align-items: center !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  gap: 0 !important;
 }
 
 .section-resource-list .quick-add__button .add-to-cart-icon {
@@ -2147,28 +2234,40 @@ button#checkout:hover {
   grid-template-columns: 1fr !important;
 }
 
+.section-resource-list .quick-add__button .add-to-cart-text__content span,
 .section-resource-list .quick-add__button .add-to-cart-text__content span span {
   opacity: 1 !important;
   translate: 0 0 !important;
   filter: none !important;
-  padding-right: 0 !important;
+  padding: 0 !important;
   font-family: 'Futura', 'Futura PT', sans-serif !important;
   font-weight: 400 !important;
   font-size: 14px !important;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
   color: #fff !important;
 }
 
-/* Show button on card hover */
+/* Unhide the visually-hidden-mobile text label */
+.section-resource-list .quick-add__button .is-visually-hidden-mobile {
+  clip: unset !important;
+  clip-path: none !important;
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  overflow: visible !important;
+  white-space: nowrap !important;
+}
+
+/* Reveal on hover */
 .section-resource-list product-card:hover .quick-add__button,
 .section-resource-list product-card:focus-within .quick-add__button {
   opacity: 1 !important;
   transform: translateY(0) !important;
 }
 
-/* ---- HEADER ---- */
+/* ---------- 6. SECTION HEADER ---------- */
 .section-resource-list .section-resource-list__header {
-  padding-bottom: 24px;
+  padding-bottom: 20px;
 }
 
 .section-resource-list .section-resource-list__header h3,
@@ -2179,24 +2278,21 @@ button#checkout:hover {
   color: #445c1f !important;
 }
 
-/* ---- RESPONSIVE ---- */
+/* ---------- 7. MOBILE ---------- */
 @media (max-width: 749px) {
   .section-resource-list .resource-list--grid > .resource-list__item {
     border-left: none !important;
-    border-bottom: 1px solid rgba(68, 92, 31, 0.12);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   }
-
   .section-resource-list .resource-list--grid > .resource-list__item:last-child {
     border-bottom: none;
   }
 
-  .section-resource-list .card-gallery .product-media-container {
-    padding: 24px 16px !important;
-  }
-
+  /* Always show ATC on mobile (no hover) */
   .section-resource-list .quick-add__button {
     opacity: 1 !important;
     transform: translateY(0) !important;
     height: 48px !important;
+    min-height: 48px !important;
   }
 }
